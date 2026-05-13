@@ -59,20 +59,73 @@ const STEPS: Step[] = [
 
 export function WaterfallPipeline() {
   return (
-    <section id="how" className="relative">
-      {/* Mobile-only dark backdrop for readability */}
+    <section id="how" className="relative scroll-mt-24">
+      {/* MOBILE-ONLY: rocky cliff band — warm rock walls flanking an
+          animated cascading water strip down the middle. Top color
+          (#6A6E3D) matches CreekPool's bottom; bottom color (#9FD3F0)
+          matches SettlingPool's top. */}
       <div
         aria-hidden
-        className="absolute inset-0 md:hidden rounded-3xl"
+        className="md:hidden absolute inset-0 z-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(21,82,130,0.4) 0%, rgba(21,82,130,0.6) 100%)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+            "linear-gradient(180deg, #6A6E3D 0%, #8E5E3E 14%, #B6815A 32%, #8E5E3E 70%, #5B3B26 92%, #9FD3F0 100%)",
+        }}
+      />
+      {/* Warm rock columns on left and right */}
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-[28%] z-0 opacity-70"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(91,59,38,0.55) 0%, rgba(142,94,62,0.35) 60%, transparent 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-[28%] z-0 opacity-70"
+        style={{
+          background:
+            "linear-gradient(270deg, rgba(91,59,38,0.55) 0%, rgba(142,94,62,0.35) 60%, transparent 100%)",
+        }}
+      />
+      {/* Cascading water strip down the centre — uses the
+          waterfallCascade keyframe defined in globals.css */}
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[42%] z-0 opacity-85"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(234,246,253,0) 0%, rgba(159,211,240,0.7) 6%, rgba(93,173,226,0.75) 35%, rgba(63,160,220,0.7) 65%, rgba(159,211,240,0.6) 92%, rgba(234,246,253,0) 100%), repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0px, rgba(255,255,255,0.18) 2px, transparent 2px, transparent 8px)",
+          backgroundSize: "100% 100%, 100% 24px",
+          animation: "waterfallCascade 2.4s linear infinite",
+          maskImage:
+            "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+        }}
+      />
+      {/* Mist puffs at top and base of the falls */}
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-x-0 top-[6%] h-16 z-0 opacity-55"
+        style={{
+          background:
+            "radial-gradient(60% 100% at 50% 30%, rgba(234,246,253,0.7) 0%, transparent 70%)",
+          filter: "blur(4px)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-x-0 bottom-[4%] h-20 z-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(70% 100% at 50% 70%, rgba(234,246,253,0.85) 0%, rgba(159,211,240,0.4) 60%, transparent 90%)",
+          filter: "blur(6px)",
         }}
       />
 
-      <div className="container relative z-10 py-6 sm:py-8 md:py-10">
+      <div className="container relative z-10 py-10 sm:py-12 md:py-10">
         {/* Desktop: pushed right · Mobile: full width centered */}
         <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div
