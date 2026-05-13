@@ -19,7 +19,7 @@ export function Footer() {
             "linear-gradient(180deg, #1F6BA4 0%, #155282 55%, #0E3D63 100%)",
         }}
       />
-      <div className="container relative z-10 py-8 sm:py-8">
+      <div className="container relative z-10 py-10 sm:py-12 md:pt-16 md:pb-12">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-2">

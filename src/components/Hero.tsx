@@ -68,13 +68,22 @@ export function Hero() {
           }}
         />
 
-        {/* Wordmark + tagline — the brand moment that replaces the
-            desktop intro video on mobile. */}
+        {/* Owl mark + wordmark + tagline — the brand moment that
+            replaces the desktop intro video on mobile. */}
         <div className="relative z-10 flex h-full min-h-[62svh] flex-col items-center justify-center px-6 pt-10">
-          <span
-            className="font-serif leading-none text-white"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/Due_Owl_Mark.png"
+            alt="Due Owl — owl on a branch"
+            className="w-[44vw] max-w-[220px] h-auto"
             style={{
-              fontSize: "clamp(3.25rem, 16vw, 5.25rem)",
+              filter: "drop-shadow(0 8px 22px rgba(15,40,70,0.35))",
+            }}
+          />
+          <span
+            className="mt-2 font-serif leading-none text-white"
+            style={{
+              fontSize: "clamp(2.75rem, 13vw, 4.5rem)",
               letterSpacing: "-0.02em",
               textShadow: "0 2px 18px rgba(15,40,70,0.35)",
             }}
