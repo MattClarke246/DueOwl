@@ -76,30 +76,7 @@ const TIERS: Tier[] = [
 export function SettlingPool() {
   return (
     <section id="pricing" className="relative scroll-mt-24">
-      {/* MOBILE-ONLY: settling pool band. Top color (#9FD3F0) matches the
-          base of WaterfallPipeline; bottom color (#1F6BA4) matches the
-          top of Footer's deep-pond floor. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute inset-0 z-0"
-        style={{
-          background:
-            "linear-gradient(180deg, #9FD3F0 0%, #5DADE2 25%, #3FA0DC 55%, #2080C8 85%, #1F6BA4 100%)",
-        }}
-      />
-      {/* Subtle ripple highlights on the pool surface */}
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-x-0 top-[8%] h-20 z-0 opacity-60"
-        style={{
-          background:
-            "repeating-radial-gradient(ellipse 120% 12px at 50% 50%, rgba(255,255,255,0.35) 0px, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 18px)",
-          maskImage:
-            "linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%)",
-        }}
-      />
+      {/* Removed mobile-only background bands since main image is now responsive */}
 
       <div className="container relative z-10 py-6 md:py-8 lg:pb-12">
         <motion.div

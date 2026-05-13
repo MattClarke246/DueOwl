@@ -9,16 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="relative">
-      {/* MOBILE-ONLY: deep pond floor band. Top color (#1F6BA4) matches
-          SettlingPool's base, fading to a quiet deep-water close. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute inset-0 z-0"
-        style={{
-          background:
-            "linear-gradient(180deg, #1F6BA4 0%, #155282 55%, #0E3D63 100%)",
-        }}
-      />
+      {/* Removed mobile-only background bands since main image is now responsive */}
       <div className="container relative z-10 py-6 md:pt-10 md:pb-8">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">

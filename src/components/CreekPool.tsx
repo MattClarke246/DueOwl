@@ -36,27 +36,7 @@ const FEATURES = [
 export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolean }) {
   return (
     <section id="features" className="relative scroll-mt-24">
-      {/* MOBILE-ONLY: meadow band. Top color matches Hero's hill green
-          (#8CC74A), bottom color matches WaterfallPipeline's warm cliff
-          edge (#6A6E3D) for a seamless handoff. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute inset-0 z-0"
-        style={{
-          background:
-            "linear-gradient(180deg, #8CC74A 0%, #6FB23A 35%, #4F9928 70%, #5A8A38 90%, #6A6E3D 100%)",
-        }}
-      />
-      {/* Soft creek meander glow */}
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-x-0 top-[42%] h-24 z-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(120% 60% at 50% 50%, rgba(159,211,240,0.55) 0%, rgba(93,173,226,0.35) 35%, transparent 70%)",
-          filter: "blur(6px)",
-        }}
-      />
+      {/* Removed mobile-only background bands since main image is now responsive */}
 
       <div className="container relative z-10 py-8 sm:py-10 md:py-12">
         <motion.div

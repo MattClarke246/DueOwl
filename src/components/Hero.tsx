@@ -17,85 +17,43 @@
 export function Hero() {
   return (
     <>
-      {/* DESKTOP spacer — preserves the 923/380 reservation for the
-          page-level video + PNG. Must stay empty. */}
+      {/* Spacer — preserves space for the page-level background image. 
+          Must stay empty so background art is visible. */}
       <section
         aria-hidden
         className="hidden md:block relative w-full"
-        style={{ aspectRatio: "923 / 380" }}
+        style={{ aspectRatio: "923 / 480" }}
       />
 
-      {/* MOBILE sky frame */}
+      {/* MOBILE branding frame (shows because video doesn't play on mobile) */}
       <section
         aria-label="Due Owl — automated invoice reminders illustrated as a flowing landscape"
-        className="md:hidden relative w-full overflow-hidden min-h-[62svh]"
+        className="md:hidden relative w-full overflow-hidden min-h-[50svh] flex flex-col items-center justify-center px-6 pt-10"
       >
-        {/* Sky gradient — top of world fading into the meadow */}
-        <div
-          aria-hidden
-          className="absolute inset-0 z-0"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/Due_Owl_Mark.png"
+          alt="Due Owl"
+          className="w-[44vw] max-w-[220px] h-auto relative z-10"
           style={{
-            background:
-              "linear-gradient(180deg, #4BA3E3 0%, #7CBFEE 38%, #B8DCF5 70%, #D7EAF8 84%, #A9D77E 96%, #8CC74A 100%)",
+            filter: "drop-shadow(0 8px 22px rgba(15,40,70,0.35))",
           }}
         />
-        {/* Sun */}
-        <div
-          aria-hidden
-          className="absolute right-6 top-14 h-24 w-24 rounded-full z-0"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/Due_Owl_Wordmark.png"
+          alt="dueowl"
+          className="mt-3 w-[58vw] max-w-[280px] h-auto relative z-10"
           style={{
-            background:
-              "radial-gradient(circle at center, #FFF6D2 0%, #FFE9A1 35%, rgba(245,230,184,0.55) 65%, rgba(245,230,184,0) 80%)",
-            boxShadow: "0 0 120px 20px rgba(255,233,161,0.55)",
+            filter: "drop-shadow(0 4px 16px rgba(15,40,70,0.32))",
           }}
         />
-        {/* Far-horizon haze */}
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-[22%] h-12 z-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(215,234,248,0) 0%, rgba(215,234,248,0.55) 60%, rgba(215,234,248,0) 100%)",
-          }}
-        />
-        {/* Distant rolling hills */}
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 h-[22%] z-0"
-          style={{
-            background:
-              "radial-gradient(120% 100% at 30% 100%, #7FC04F 0%, #A9D77E 45%, transparent 70%), radial-gradient(140% 100% at 80% 100%, #6FB23A 0%, #8CC74A 50%, transparent 75%)",
-          }}
-        />
-
-        {/* Owl mark + wordmark + tagline — the brand moment that
-            replaces the desktop intro video on mobile. */}
-        <div className="relative z-10 flex h-full min-h-[62svh] flex-col items-center justify-center px-6 pt-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/Due_Owl_Mark.png"
-            alt="Due Owl"
-            className="w-[44vw] max-w-[220px] h-auto"
-            style={{
-              filter: "drop-shadow(0 8px 22px rgba(15,40,70,0.35))",
-            }}
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/Due_Owl_Wordmark.png"
-            alt="dueowl"
-            className="mt-3 w-[58vw] max-w-[280px] h-auto"
-            style={{
-              filter: "drop-shadow(0 4px 16px rgba(15,40,70,0.32))",
-            }}
-          />
-          <p
-            className="mt-4 text-[11px] font-medium uppercase tracking-[0.28em] text-white/90"
-            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.35)" }}
-          >
-            Automated invoice reminders
-          </p>
-        </div>
+        <p
+          className="mt-4 text-[11px] font-medium uppercase tracking-[0.28em] text-white/90 relative z-10"
+          style={{ textShadow: "0 1px 8px rgba(15,40,70,0.35)" }}
+        >
+          Automated invoice reminders
+        </p>
       </section>
     </>
   );

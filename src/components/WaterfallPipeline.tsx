@@ -81,49 +81,7 @@ export function WaterfallPipeline() {
             "linear-gradient(90deg, rgba(91,59,38,0.55) 0%, rgba(142,94,62,0.35) 60%, transparent 100%)",
         }}
       />
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-[28%] z-0 opacity-70"
-        style={{
-          background:
-            "linear-gradient(270deg, rgba(91,59,38,0.55) 0%, rgba(142,94,62,0.35) 60%, transparent 100%)",
-        }}
-      />
-      {/* Cascading water strip down the centre — uses the
-          waterfallCascade keyframe defined in globals.css */}
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[42%] z-0 opacity-85"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(234,246,253,0) 0%, rgba(159,211,240,0.7) 6%, rgba(93,173,226,0.75) 35%, rgba(63,160,220,0.7) 65%, rgba(159,211,240,0.6) 92%, rgba(234,246,253,0) 100%), repeating-linear-gradient(180deg, rgba(255,255,255,0.18) 0px, rgba(255,255,255,0.18) 2px, transparent 2px, transparent 8px)",
-          backgroundSize: "100% 100%, 100% 24px",
-          animation: "waterfallCascade 2.4s linear infinite",
-          maskImage:
-            "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-        }}
-      />
-      {/* Mist puffs at top and base of the falls */}
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-x-0 top-[6%] h-16 z-0 opacity-55"
-        style={{
-          background:
-            "radial-gradient(60% 100% at 50% 30%, rgba(234,246,253,0.7) 0%, transparent 70%)",
-          filter: "blur(4px)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-x-0 bottom-[4%] h-20 z-0 opacity-70"
-        style={{
-          background:
-            "radial-gradient(70% 100% at 50% 70%, rgba(234,246,253,0.85) 0%, rgba(159,211,240,0.4) 60%, transparent 90%)",
-          filter: "blur(6px)",
-        }}
-      />
+        {/* Removed mobile-only background bands since main image is now responsive */}
 
       <div className="container relative z-10 py-6 md:py-6">
         {/* Desktop: pushed right · Mobile: full width centered */}
