@@ -21,16 +21,19 @@ export default function Page() {
   const [isVideoFinished, setIsVideoFinished] = useState(false);
 
   return (
-    <main
-      className="relative overflow-x-hidden"
-      style={{
-        backgroundColor: "#1F6BA4",
-        backgroundImage: "url(/Due_Owl_HeaderEND.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top center",
-        backgroundSize: "100% auto",
-      }}
-    >
+    <main className="relative overflow-x-hidden bg-[#1F6BA4]">
+      {/* Full-height scrolling background, filtered to match the video's vibrance */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url(/Due_Owl_Background.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top center",
+          backgroundSize: "100% auto",
+          filter: "saturate(1.3) contrast(1.05) brightness(1.05)",
+          zIndex: 0,
+        }}
+      />
       <video
         src="/Due_Owl_Hero_Video.mp4"
         autoPlay
@@ -38,8 +41,8 @@ export default function Page() {
         playsInline
         onEnded={() => setIsVideoFinished(true)}
         onError={() => setIsVideoFinished(true)}
-        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
-        style={{ zIndex: 0 }}
+        className={`absolute top-0 left-0 w-full h-auto pointer-events-none transition-opacity duration-1000 ease-in-out ${isVideoFinished ? 'opacity-0' : 'opacity-100'}`}
+        style={{ zIndex: 1 }}
       />
 
       {/* Mobile gradient overlay that extends the natural colours
