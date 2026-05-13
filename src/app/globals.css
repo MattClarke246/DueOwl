@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ───────────── Due Owl illustrated landscape palette ─────────────
+       Sampled directly from Due_Owl_HeaderEND.png so every section
+       reads as one continuous illustration. NEVER introduce dark navy,
+       cream, or pastel — keep everything in this bright vector world. */
+
+    /* Sky — top of world */
+    --sky-top: #4BA3E3;     /* hero header sky */
+    --sky-mid: #7CBFEE;
+    --sky-pale: #B8DCF5;
+    --sky-haze: #D7EAF8;    /* distant horizon haze */
+
+    /* Meadow / land */
+    --meadow-bright: #8CC74A;
+    --meadow-mid: #6FB23A;
+    --meadow-deep: #4F9928;
+    --meadow-shadow: #3D7A25;
+    --hill-far: #A9D77E;    /* distant rolling hills */
+    --hill-mid: #7FC04F;
+
+    /* Water — creek to pond to lake */
+    --water-bright: #5DADE2;
+    --water-mid: #3FA0DC;
+    --water-deep: #2080C8;
+    --water-shallow: #9FD3F0;
+    --water-foam: #EAF6FD;
+
+    /* Rocky cliff / earth — terracotta-warm, matching hero rooftops */
+    --rock-warm: #B6815A;
+    --rock-mid: #8E5E3E;
+    --rock-shadow: #5B3B26;
+    --earth-sandy: #D9B98C;
+
+    /* Sun + gold accents */
+    --gold-sun: #F5E6B8;
+    --gold-warm: #E5B547;
+    --gold-deep: #B6862A;
+    --gold-amber: #D89622;
+
+    /* Owl tones */
+    --owl-green: #6B8F4A;
+    --owl-body: #8BAD6D;
+    --owl-cream: #F0E5B6;
+
+    --background: 40 35% 97%;
+    --foreground: 24 12% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 12% 12%;
+    --muted: 36 24% 92%;
+    --muted-foreground: 24 8% 38%;
+    --border: 30 14% 88%;
+    --input: 30 14% 88%;
+    --ring: 36 56% 52%;
+    --radius: 1.25rem;
+  }
+
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-bronze-200/70 text-stone-900;
+  }
+}
+
+@layer components {
+  /* ── Glass card ── */
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.58) 100%
+    );
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset,
+      0 24px 60px -24px rgba(15, 23, 42, 0.14);
+  }
+
+  .glass-dark {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 25, 23, 0.85) 0%,
+      rgba(28, 25, 23, 0.75) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* ── Animated water flow ── */
+  @keyframes waterFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 100%; }
+  }
+
+  @keyframes waterfallCascade {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 400px; }
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.15); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.6; }
+  }
+
+  @keyframes shimmer {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+  }
+
+  @keyframes floatBubble {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+    25% { transform: translateY(-8px) translateX(3px); opacity: 0.7; }
+    50% { transform: translateY(-16px) translateX(-2px); opacity: 0.5; }
+    75% { transform: translateY(-24px) translateX(4px); opacity: 0.3; }
+  }
+
+  @keyframes gentleWave {
+    0%, 100% { d: path("M0,20 Q150,0 300,20 T600,20 T900,20 T1200,20 T1500,20 L1500,60 L0,60 Z"); }
+    50% { d: path("M0,20 Q150,40 300,20 T600,20 T900,20 T1200,20 T1500,20 L1500,60 L0,60 Z"); }
+  }
+
+  @keyframes mistFloat {
+    0% { transform: translateX(-10%) translateY(0); opacity: 0.15; }
+    50% { transform: translateX(5%) translateY(-8px); opacity: 0.35; }
+    100% { transform: translateX(-10%) translateY(0); opacity: 0.15; }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .water-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .water-ripple {
+    animation: ripple 4s ease-in-out infinite;
+  }
+
+  .mist-float {
+    animation: mistFloat 8s ease-in-out infinite;
+  }
+
+  /* ── SVG wave separator ── */
+  .wave-separator {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-separator svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+
+  .wave-separator-top {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .wave-separator-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+}
+
+@layer utilities {
+  .mask-radial-fade {
+    mask-image: radial-gradient(ellipse at center, #000 50%, transparent 80%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      #000 50%,
+      transparent 80%
+    );
+  }
+}

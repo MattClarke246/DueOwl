@@ -1,0 +1,255 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e8]: d
+      - generic [ref=e9]: dueowl
+    - navigation [ref=e10]:
+      - link "Features" [ref=e11] [cursor=pointer]:
+        - /url: "#features"
+      - link "How it works" [ref=e12] [cursor=pointer]:
+        - /url: "#how"
+      - link "Pricing" [ref=e13] [cursor=pointer]:
+        - /url: "#pricing"
+      - link "About" [ref=e14] [cursor=pointer]:
+        - /url: "#about"
+    - generic [ref=e15]:
+      - button "Sign in" [ref=e16] [cursor=pointer]
+      - button "Start free" [ref=e17] [cursor=pointer]
+  - region "Due Owl — automated invoice reminders illustrated as a flowing landscape" [ref=e18]
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - img [ref=e24]
+        - text: The quiet way to collect what you're owed
+      - heading "Automated invoice reminders. Seamless flow. Endless growth." [level=1] [ref=e26]:
+        - text: Automated invoice reminders.
+        - text: Seamless flow.
+        - generic [ref=e27]: Endless growth.
+      - paragraph [ref=e28]: Due Owl follows up on late invoices for you — politely, on schedule, and entirely on its own — so your cash keeps flowing while you focus on the work that matters.
+      - generic [ref=e29]:
+        - button "Get started free" [ref=e30] [cursor=pointer]:
+          - text: Get started free
+          - img [ref=e31]
+        - button "Watch 90-second demo" [ref=e34] [cursor=pointer]
+      - paragraph [ref=e35]: Free forever for up to 5 invoices a month · No card required
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - img [ref=e39]
+        - heading "Instant Setup" [level=3] [ref=e41]
+        - paragraph [ref=e42]: Connect your accounting tool or upload invoices — reminders start in minutes.
+      - generic [ref=e43]:
+        - img [ref=e45]
+        - heading "Protect Relationships" [level=3] [ref=e47]
+        - paragraph [ref=e48]: Warm, on-brand reminders that escalate gently. Professional, never aggressive.
+      - generic [ref=e49]:
+        - img [ref=e51]
+        - heading "Real-Time Dashboard" [level=3] [ref=e53]
+        - paragraph [ref=e54]: Watch payments arrive live. Track open invoices, response rates, and cash flow.
+    - generic [ref=e55]:
+      - paragraph [ref=e56]: Trusted by independent studios & growing firms
+      - generic [ref=e57]:
+        - generic [ref=e58]: Northwind
+        - generic [ref=e59]: Linwood
+        - generic [ref=e60]: Aperture
+        - generic [ref=e61]: Salt & Stone
+        - generic [ref=e62]: Atelier
+  - generic [ref=e65]:
+    - generic [ref=e66]:
+      - paragraph [ref=e67]: How it works
+      - heading "Four quiet steps, from invoice to paid." [level=2] [ref=e68]:
+        - text: Four quiet steps,
+        - text: from invoice to paid.
+      - paragraph [ref=e69]: Every step runs on its own. You set the cadence once — Due Owl handles the rest with the kind of patience the work deserves.
+    - list [ref=e72]:
+      - listitem [ref=e73]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: "1"
+          - img [ref=e77]
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: "01"
+            - generic [ref=e84]: Step
+          - heading "Automated invoice" [level=3] [ref=e85]
+          - paragraph [ref=e86]: Connect your accounting tool or upload a PDF. Due Owl reads the amount, due date, and client details — no manual entry, no spreadsheets.
+      - listitem [ref=e87]:
+        - generic [ref=e89]:
+          - generic [ref=e90]: "2"
+          - img [ref=e91]
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: "02"
+            - generic [ref=e98]: Step
+          - heading "Client reach-out" [level=3] [ref=e99]
+          - paragraph [ref=e100]: Warm, on-brand reminders go out on a schedule you set. We escalate tone gently — never robotic, never aggressive — so the relationship stays intact.
+      - listitem [ref=e101]:
+        - generic [ref=e103]:
+          - generic [ref=e104]: "3"
+          - img [ref=e105]
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: "03"
+            - generic [ref=e112]: Step
+          - heading "Remittance" [level=3] [ref=e113]
+          - paragraph [ref=e114]: One-tap pay links open the path. Clients pay by card, ACH, or wire from the email itself — and you watch the funds arrive in real time.
+      - listitem [ref=e115]:
+        - generic [ref=e117]:
+          - generic [ref=e118]: "4"
+          - img [ref=e119]
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "04"
+            - generic [ref=e126]: Step
+          - heading "Receipt" [level=3] [ref=e127]
+          - paragraph [ref=e128]: We send the thank-you, mark the invoice paid, and tuck the receipt into your books. The loop closes itself — quietly, completely.
+  - generic [ref=e130]:
+    - generic [ref=e131]:
+      - paragraph [ref=e132]: Pricing
+      - heading "Honest pricing. No surprises." [level=2] [ref=e133]:
+        - text: Honest pricing.
+        - text: No surprises.
+      - paragraph [ref=e134]: Start free. Upgrade only when Due Owl pays for itself — which it usually does in the first reminder cycle.
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - heading "Free" [level=3] [ref=e138]
+          - paragraph [ref=e139]: For solo operators sending the occasional invoice.
+        - generic [ref=e140]:
+          - generic [ref=e141]: $0
+          - generic [ref=e142]: forever
+        - list [ref=e143]:
+          - listitem [ref=e144]:
+            - img [ref=e146]
+            - generic [ref=e148]: Up to 5 active invoices
+          - listitem [ref=e149]:
+            - img [ref=e151]
+            - generic [ref=e153]: 2 automated reminder steps
+          - listitem [ref=e154]:
+            - img [ref=e156]
+            - generic [ref=e158]: Email reminders only
+          - listitem [ref=e159]:
+            - img [ref=e161]
+            - generic [ref=e163]: Standard Due Owl branding
+        - button "Start free" [ref=e165] [cursor=pointer]
+      - generic [ref=e166]:
+        - generic [ref=e168]:
+          - img [ref=e169]
+          - text: Most loved
+        - generic [ref=e171]:
+          - heading "Medium" [level=3] [ref=e172]
+          - paragraph [ref=e173]: For growing studios and small firms ready to automate.
+        - generic [ref=e174]:
+          - generic [ref=e175]: $24
+          - generic [ref=e176]: / month
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - img [ref=e180]
+            - generic [ref=e182]: Unlimited invoices
+          - listitem [ref=e183]:
+            - img [ref=e185]
+            - generic [ref=e187]: Custom reminder cadence
+          - listitem [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e192]: Email + SMS reach-out
+          - listitem [ref=e193]:
+            - img [ref=e195]
+            - generic [ref=e197]: One-tap pay links (card, ACH)
+          - listitem [ref=e198]:
+            - img [ref=e200]
+            - generic [ref=e202]: Custom sender domain
+          - listitem [ref=e203]:
+            - img [ref=e205]
+            - generic [ref=e207]: Quickbooks & Xero sync
+        - button "Start 14-day trial" [ref=e209] [cursor=pointer]
+      - generic [ref=e210]:
+        - generic [ref=e211]:
+          - heading "Advanced" [level=3] [ref=e212]
+          - paragraph [ref=e213]: For teams managing high-volume receivables.
+        - generic [ref=e214]:
+          - generic [ref=e215]: $72
+          - generic [ref=e216]: / month
+        - list [ref=e217]:
+          - listitem [ref=e218]:
+            - img [ref=e220]
+            - generic [ref=e222]: Everything in Medium
+          - listitem [ref=e223]:
+            - img [ref=e225]
+            - generic [ref=e227]: Multi-seat workspace
+          - listitem [ref=e228]:
+            - img [ref=e230]
+            - generic [ref=e232]: Approval workflows
+          - listitem [ref=e233]:
+            - img [ref=e235]
+            - generic [ref=e237]: Priority support & SLA
+          - listitem [ref=e238]:
+            - img [ref=e240]
+            - generic [ref=e242]: API access & webhooks
+          - listitem [ref=e243]:
+            - img [ref=e245]
+            - generic [ref=e247]: Dedicated success manager
+        - button "Talk to sales" [ref=e249] [cursor=pointer]
+    - paragraph [ref=e250]: All plans include unlimited clients, end-to-end encryption, and a 30-day money-back guarantee.
+  - generic [ref=e252]:
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e257]: d
+          - generic [ref=e258]: dueowl
+        - paragraph [ref=e259]: The quiet way to collect what you're owed. Built for studios, consultants, and growing firms.
+      - generic [ref=e260]:
+        - generic [ref=e261]:
+          - paragraph [ref=e262]: Product
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - link "Features" [ref=e265] [cursor=pointer]:
+                - /url: "#"
+                - text: Features
+                - img [ref=e266]
+            - listitem [ref=e269]:
+              - link "Pricing" [ref=e270] [cursor=pointer]:
+                - /url: "#"
+                - text: Pricing
+                - img [ref=e271]
+            - listitem [ref=e274]:
+              - link "Changelog" [ref=e275] [cursor=pointer]:
+                - /url: "#"
+                - text: Changelog
+                - img [ref=e276]
+        - generic [ref=e279]:
+          - paragraph [ref=e280]: Company
+          - list [ref=e281]:
+            - listitem [ref=e282]:
+              - link "About" [ref=e283] [cursor=pointer]:
+                - /url: "#"
+                - text: About
+                - img [ref=e284]
+            - listitem [ref=e287]:
+              - link "Customers" [ref=e288] [cursor=pointer]:
+                - /url: "#"
+                - text: Customers
+                - img [ref=e289]
+            - listitem [ref=e292]:
+              - link "Contact" [ref=e293] [cursor=pointer]:
+                - /url: "#"
+                - text: Contact
+                - img [ref=e294]
+        - generic [ref=e297]:
+          - paragraph [ref=e298]: Legal
+          - list [ref=e299]:
+            - listitem [ref=e300]:
+              - link "Privacy" [ref=e301] [cursor=pointer]:
+                - /url: "#"
+                - text: Privacy
+                - img [ref=e302]
+            - listitem [ref=e305]:
+              - link "Terms" [ref=e306] [cursor=pointer]:
+                - /url: "#"
+                - text: Terms
+                - img [ref=e307]
+            - listitem [ref=e310]:
+              - link "Security" [ref=e311] [cursor=pointer]:
+                - /url: "#"
+                - text: Security
+                - img [ref=e312]
+    - generic [ref=e315]:
+      - paragraph [ref=e316]: © 2026 Due Owl, Inc. Made patiently.
+      - paragraph [ref=e317]: Seamless flow. Endless growth.
