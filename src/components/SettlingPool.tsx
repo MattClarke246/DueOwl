@@ -75,8 +75,33 @@ const TIERS: Tier[] = [
 
 export function SettlingPool() {
   return (
-    <section id="pricing" className="relative">
-      <div className="container relative z-10 pt-6 pb-10 sm:pt-8 sm:pb-16 md:pt-10 md:pb-24">
+    <section id="pricing" className="relative scroll-mt-24">
+      {/* MOBILE-ONLY: settling pool band — pale shallow water at the top
+          (matches the bottom of WaterfallPipeline) fading into deep
+          water at the bottom (matches the top of Footer). */}
+      <div
+        aria-hidden
+        className="md:hidden absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(180deg, #9FD3F0 0%, #5DADE2 25%, #3FA0DC 55%, #2080C8 85%, #1F6BA4 100%)",
+        }}
+      />
+      {/* Subtle ripple highlights on the pool surface */}
+      <div
+        aria-hidden
+        className="md:hidden pointer-events-none absolute inset-x-0 top-[8%] h-20 -z-10 opacity-60"
+        style={{
+          background:
+            "repeating-radial-gradient(ellipse 120% 12px at 50% 50%, rgba(255,255,255,0.35) 0px, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 18px)",
+          maskImage:
+            "linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%)",
+        }}
+      />
+
+      <div className="container relative z-10 pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-10 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +150,9 @@ export function SettlingPool() {
               }}
               className={cn(
                 "group relative flex flex-col rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-1",
-                tier.highlight ? "md:-mt-3 md:mb-3 order-first md:order-none" : ""
+                tier.highlight
+                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-3 md:mb-3"
+                  : ""
               )}
               style={
                 tier.highlight

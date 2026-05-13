@@ -10,11 +10,12 @@ import { Footer } from "@/components/Footer";
 
 /* ─────────────────────────────────────────────────────────────
    Page
-   Desktop: background-size 100% auto keeps the illustrated
-   landscape at its native aspect ratio.
-   Mobile: the content stack is much taller than the image, so
-   we add colored gradient bands that continue the visual story
-   (sky → meadow → water → deep pool) below the illustration.
+   Desktop: one continuous illustrated landscape PNG behind
+   every section. Layout is pixel-identical to the original.
+   Mobile: each section owns its own illustrated band, so the
+   "vertical storybook" reads as: sky → meadow → waterfall →
+   pool → deep pond. Section bands are color-matched at their
+   edges so the scenes blend without visible seams.
    ───────────────────────────────────────────────────────────── */
 
 export default function Page() {
@@ -22,9 +23,11 @@ export default function Page() {
 
   return (
     <main className="relative overflow-x-hidden bg-[#1F6BA4]">
-      {/* Full-height scrolling background in its original colors */}
+      {/* DESKTOP-ONLY: full-page illustrated landscape background.
+          On mobile each section paints its own band, so this is hidden. */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        aria-hidden
+        className="hidden md:block absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: "url(/Due_Owl_Background.png)",
           backgroundRepeat: "no-repeat",
@@ -33,41 +36,12 @@ export default function Page() {
           zIndex: 0,
         }}
       />
-      {/* The video plays and is instantly removed when finished, snapping perfectly to the background with no stacking or ghosting */}
-      {!isVideoFinished && (
-        <video
-          src="/Due_Owl_Hero_Video.mp4"
-          autoPlay
-          muted
-          playsInline
-          onEnded={() => setIsVideoFinished(true)}
-          onError={() => setIsVideoFinished(true)}
-          className="absolute top-0 left-0 w-full h-auto pointer-events-none"
-          style={{ zIndex: 1 }}
-        />
-      )}
-
-      {/* Mobile gradient overlay that extends the natural colours
-          below where the background image ends on narrow screens. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 md:hidden"
-        style={{
-          background: `linear-gradient(
-            to bottom,
-            transparent 0%,
-            transparent 40%,
-            rgba(31,107,164,0.6) 55%,
-            rgba(31,107,164,0.92) 65%,
-            #1F6BA4 75%,
-            #1a5f94 85%,
-            #155282 100%
-          )`,
-        }}
-      />
 
       <Navbar isVideoFinished={isVideoFinished} />
-      <Hero />
+      <Hero
+        isVideoFinished={isVideoFinished}
+        onVideoEnd={() => setIsVideoFinished(true)}
+      />
       <CreekPool isVideoFinished={isVideoFinished} />
       <WaterfallPipeline />
       <SettlingPool />
