@@ -51,7 +51,8 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="font-serif text-balance text-3xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl lg:text-[5.5rem] sm:leading-[1.05]"
             style={{
-              textShadow: "0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.8)",
+              textShadow:
+                "0 4px 32px rgba(15,40,70,0.6), 0 2px 8px rgba(15,40,70,0.5)",
             }}
           >
             <span
@@ -78,9 +79,9 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mx-auto mt-4 sm:mt-7 max-w-xl text-balance text-sm leading-relaxed text-white sm:text-base md:text-lg font-medium"
+            className="mx-auto mt-4 sm:mt-7 max-w-xl text-balance text-sm leading-relaxed text-white sm:text-base md:text-lg"
             style={{
-              textShadow: "0 2px 12px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.9)",
+              textShadow: "0 1px 12px rgba(15,40,70,0.55)",
             }}
           >
             Due Owl follows up on late invoices for you — politely, on schedule,
@@ -109,8 +110,8 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-white/95 font-medium"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
+            className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-white/85"
+            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
           >
             Free forever for up to 5 invoices a month · No card required
           </motion.p>
@@ -145,12 +146,14 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <h3
-                  className="font-serif text-lg sm:text-xl tracking-tight text-white mb-1.5 sm:mb-2 drop-shadow-sm"
+                  className="font-serif text-lg sm:text-xl tracking-tight text-white mb-1.5 sm:mb-2"
+                  style={{ textShadow: "0 1px 8px rgba(15,40,70,0.45)" }}
                 >
                   {feat.title}
                 </h3>
                 <p
-                  className="text-[13px] sm:text-sm leading-relaxed text-white/95 drop-shadow-sm font-medium"
+                  className="text-[13px] sm:text-sm leading-relaxed text-white/90"
+                  style={{ textShadow: "0 1px 6px rgba(15,40,70,0.45)" }}
                 >
                   {feat.desc}
                 </p>

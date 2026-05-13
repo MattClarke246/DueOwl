@@ -25,7 +25,7 @@ export default function Page() {
       className="relative overflow-x-hidden"
       style={{
         backgroundColor: "#1F6BA4",
-        backgroundImage: "url(/Due_Owl_Background.png)",
+        backgroundImage: "url(/Due_Owl_HeaderEND.png)",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top center",
         backgroundSize: "100% auto",
@@ -38,7 +38,7 @@ export default function Page() {
         playsInline
         onEnded={() => setIsVideoFinished(true)}
         onError={() => setIsVideoFinished(true)}
-        className={`absolute top-0 left-0 w-full h-auto pointer-events-none transition-opacity duration-1000 ${isVideoFinished ? 'opacity-0' : 'opacity-100'}`}
+        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
         style={{ zIndex: 0 }}
       />
 
