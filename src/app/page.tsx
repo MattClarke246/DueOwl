@@ -7,17 +7,11 @@ import { Footer } from "@/components/Footer";
 
 /* ─────────────────────────────────────────────────────────────
    Page
-   The illustrated background image (Due_Owl_Background.png) is
-   applied directly to <main> at its NATURAL aspect ratio via
-   background-size: 100% auto. Its on-screen height equals
-   viewport width × 1703/923 (~184.5%). Below that height, the
-   matching pool-blue backgroundColor takes over so the footer
-   sits seamlessly on water.
-
-   Sections render as normal flow children on top of the image —
-   no z-index tricks (an earlier attempt used a -z-10 absolute
-   layer which painted BEHIND <main>'s own background-color and
-   left the user looking at a flat blue screen).
+   Desktop: background-size 100% auto keeps the illustrated
+   landscape at its native aspect ratio.
+   Mobile: the content stack is much taller than the image, so
+   we add colored gradient bands that continue the visual story
+   (sky → meadow → water → deep pool) below the illustration.
    ───────────────────────────────────────────────────────────── */
 
 export default function Page() {
@@ -32,6 +26,25 @@ export default function Page() {
         backgroundSize: "100% auto",
       }}
     >
+      {/* Mobile gradient overlay that extends the natural colours
+          below where the background image ends on narrow screens. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{
+          background: `linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(31,107,164,0.6) 55%,
+            rgba(31,107,164,0.92) 65%,
+            #1F6BA4 75%,
+            #1a5f94 85%,
+            #155282 100%
+          )`,
+        }}
+      />
+
       <Navbar />
       <Hero />
       <CreekPool />

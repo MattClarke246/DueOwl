@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 /* ─────────────────────────────────────────────────────────────
    SettlingPool — Pricing
-   Transparent overlay over the pool at the base of the waterfall
-   in the full-page background image. Pricing cards rest on the
-   illustrated pool surface like stepping-stones.
+   Desktop: 3-col grid with "Most loved" card elevated.
+   Mobile: single-column stack with tighter spacing, smaller
+   prices, and compact feature lists so cards don't overflow.
    ───────────────────────────────────────────────────────────── */
 
 type Tier = {
@@ -76,22 +76,22 @@ const TIERS: Tier[] = [
 export function SettlingPool() {
   return (
     <section id="pricing" className="relative">
-      <div className="container relative z-10 pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24">
+      <div className="container relative z-10 pt-6 pb-10 sm:pt-8 sm:pb-16 md:pt-10 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-8 sm:mb-12 max-w-2xl text-center"
+          className="mx-auto mb-6 sm:mb-8 md:mb-12 max-w-2xl text-center"
         >
           <p
-            className="mb-2 text-xs uppercase tracking-[0.22em] text-white/90"
+            className="mb-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/90"
             style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
           >
             Pricing
           </p>
           <h2
-            className="font-serif text-balance text-2xl leading-tight tracking-tight sm:text-3xl md:text-4xl text-white"
+            className="font-serif text-balance text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl lg:text-4xl text-white"
             style={{
               textShadow:
                 "0 2px 22px rgba(15,40,70,0.6), 0 1px 4px rgba(15,40,70,0.5)",
@@ -103,14 +103,15 @@ export function SettlingPool() {
             </span>
           </h2>
           <p
-            className="mt-3 text-balance text-sm text-white/95"
+            className="mt-2 sm:mt-3 text-balance text-[13px] sm:text-sm text-white/95"
             style={{ textShadow: "0 1px 10px rgba(15,40,70,0.55)" }}
           >
             Start free. Upgrade only when Due Owl pays for itself.
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+        {/* Mobile: reorder so "Medium" (highlighted) card appears first */}
+        <div className="mx-auto grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3">
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.id}
@@ -123,8 +124,8 @@ export function SettlingPool() {
                 ease: "easeOut",
               }}
               className={cn(
-                "group relative flex flex-col rounded-2xl p-5 sm:p-6 transition-all duration-500 hover:-translate-y-1",
-                tier.highlight ? "md:-mt-3 md:mb-3" : ""
+                "group relative flex flex-col rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-1",
+                tier.highlight ? "md:-mt-3 md:mb-3 order-first md:order-none" : ""
               )}
               style={
                 tier.highlight
@@ -163,45 +164,45 @@ export function SettlingPool() {
                 </div>
               )}
 
-              <div className="mb-3">
+              <div className="mb-2 sm:mb-3">
                 <h3
-                  className="font-serif text-xl tracking-tight"
+                  className="font-serif text-lg sm:text-xl tracking-tight"
                   style={{ color: tier.highlight ? "#8E5E3E" : "#23362A" }}
                 >
                   {tier.name}
                 </h3>
                 <p
-                  className="mt-1 text-xs leading-snug"
+                  className="mt-1 text-[11px] sm:text-xs leading-snug"
                   style={{ color: "rgba(40,60,40,0.72)" }}
                 >
                   {tier.blurb}
                 </p>
               </div>
 
-              <div className="mb-4 flex items-baseline gap-1.5">
+              <div className="mb-3 sm:mb-4 flex items-baseline gap-1.5">
                 <span
-                  className="font-serif text-4xl tracking-tight"
+                  className="font-serif text-3xl sm:text-4xl tracking-tight"
                   style={{ color: "#23362A" }}
                 >
                   {tier.price}
                 </span>
                 <span
                   style={{ color: "rgba(40,60,40,0.6)" }}
-                  className="text-xs"
+                  className="text-[11px] sm:text-xs"
                 >
                   {tier.cadence}
                 </span>
               </div>
 
-              <ul className="mb-5 space-y-1.5">
+              <ul className="mb-4 sm:mb-5 space-y-1 sm:space-y-1.5">
                 {tier.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-2 text-[13px] leading-snug"
+                    className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug"
                     style={{ color: "rgba(35,54,42,0.92)" }}
                   >
                     <span
-                      className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full"
+                      className="mt-0.5 grid h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 place-items-center rounded-full"
                       style={{
                         background: tier.highlight
                           ? "rgba(229,181,71,0.22)"
@@ -209,7 +210,7 @@ export function SettlingPool() {
                         color: tier.highlight ? "#8E5E3E" : "#4F9928",
                       }}
                     >
-                      <Check className="h-2.5 w-2.5" strokeWidth={3} />
+                      <Check className="h-2 w-2 sm:h-2.5 sm:w-2.5" strokeWidth={3} />
                     </span>
                     <span>{f}</span>
                   </li>
@@ -230,7 +231,7 @@ export function SettlingPool() {
         </div>
 
         <p
-          className="mt-6 text-center text-[11px] text-white/85"
+          className="mt-4 sm:mt-6 text-center text-[10px] sm:text-[11px] text-white/85"
           style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
         >
           All plans include unlimited clients, end-to-end encryption, and a

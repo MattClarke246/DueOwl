@@ -11,10 +11,11 @@ import {
 
 /* ─────────────────────────────────────────────────────────────
    WaterfallPipeline — "How it works"
-   Transparent overlay over the waterfall + cliff region of the
-   full-page background image. The illustrated waterfall on the
-   LEFT is part of the background already; the pipeline steps
-   sit on the RIGHT side over the rocky/green cliff edge.
+   Desktop: steps sit on the RIGHT 50% so the illustrated
+   waterfall is visible on the left.
+   Mobile: steps go FULL WIDTH (centered) since the background
+   waterfall isn't visible at mobile scale. The section gets its
+   own semi-transparent dark backdrop for legibility.
    ───────────────────────────────────────────────────────────── */
 
 type Step = {
@@ -59,23 +60,36 @@ const STEPS: Step[] = [
 export function WaterfallPipeline() {
   return (
     <section id="how" className="relative">
+      {/* Mobile-only dark backdrop for readability */}
+      <div
+        aria-hidden
+        className="absolute inset-0 md:hidden rounded-3xl"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(21,82,130,0.4) 0%, rgba(21,82,130,0.6) 100%)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+        }}
+      />
+
       <div className="container relative z-10 py-6 sm:py-8 md:py-10">
+        {/* Desktop: pushed right · Mobile: full width centered */}
         <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.7 }}
-            className="mb-6 sm:mb-8"
+            className="mb-5 sm:mb-6 md:mb-8"
           >
             <p
-              className="mb-4 text-xs uppercase tracking-[0.22em] text-white/90"
+              className="mb-3 sm:mb-4 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/90"
               style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
             >
               How it works
             </p>
             <h2
-              className="font-serif text-balance text-3xl leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
+              className="font-serif text-balance text-2xl leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
               style={{
                 textShadow:
                   "0 2px 22px rgba(15,40,70,0.6), 0 1px 4px rgba(15,40,70,0.5)",
@@ -88,7 +102,7 @@ export function WaterfallPipeline() {
               </span>
             </h2>
             <p
-              className="mt-6 max-w-lg text-balance text-white/95 text-sm sm:text-base"
+              className="mt-4 sm:mt-6 max-w-lg text-balance text-white/95 text-[13px] sm:text-sm md:text-base"
               style={{ textShadow: "0 1px 10px rgba(15,40,70,0.55)" }}
             >
               Every step runs on its own. You set the cadence once — Due Owl
@@ -99,14 +113,14 @@ export function WaterfallPipeline() {
           <div className="relative">
             <div
               aria-hidden
-              className="absolute left-[27px] top-4 bottom-4 w-px"
+              className="absolute left-[23px] sm:left-[27px] top-4 bottom-4 w-px"
               style={{
                 background:
                   "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.6) 90%, transparent 100%)",
               }}
             />
 
-            <ol className="space-y-4 sm:space-y-5">
+            <ol className="space-y-3 sm:space-y-4 md:space-y-5">
               {STEPS.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -120,11 +134,11 @@ export function WaterfallPipeline() {
                       delay: i * 0.08,
                       ease: "easeOut",
                     }}
-                    className="relative grid grid-cols-[56px_1fr] gap-4 sm:gap-6"
+                    className="relative grid grid-cols-[48px_1fr] sm:grid-cols-[56px_1fr] gap-3 sm:gap-4 md:gap-6"
                   >
                     <div className="relative flex items-start">
                       <div
-                        className="relative grid h-14 w-14 place-items-center rounded-full"
+                        className="relative grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full"
                         style={{
                           background: "#FFFCEC",
                           boxShadow:
@@ -132,20 +146,20 @@ export function WaterfallPipeline() {
                         }}
                       >
                         <span
-                          className="absolute -top-1 -right-1 grid h-5 w-5 place-items-center rounded-full text-[10px] font-medium text-white"
+                          className="absolute -top-1 -right-1 grid h-4 w-4 sm:h-5 sm:w-5 place-items-center rounded-full text-[9px] sm:text-[10px] font-medium text-white"
                           style={{ background: "#E5B547" }}
                         >
                           {i + 1}
                         </span>
                         <Icon
-                          className="h-6 w-6"
+                          className="h-5 w-5 sm:h-6 sm:w-6"
                           style={{ color: "#8E5E3E" }}
                         />
                       </div>
                     </div>
 
                     <div
-                      className="rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:-translate-y-0.5"
+                      className="rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-300 hover:-translate-y-0.5"
                       style={{
                         background:
                           "linear-gradient(180deg, rgba(255,253,236,0.94) 0%, rgba(248,238,212,0.9) 100%)",
@@ -156,9 +170,9 @@ export function WaterfallPipeline() {
                           "0 1px 0 rgba(255,255,255,0.6) inset, 0 18px 40px -16px rgba(15,40,70,0.5)",
                       }}
                     >
-                      <div className="mb-3 flex items-center gap-3">
+                      <div className="mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3">
                         <span
-                          className="font-serif text-2xl sm:text-3xl tracking-tight"
+                          className="font-serif text-xl sm:text-2xl md:text-3xl tracking-tight"
                           style={{ color: "#8E5E3E" }}
                         >
                           {step.index}
@@ -171,20 +185,20 @@ export function WaterfallPipeline() {
                           }}
                         />
                         <span
-                          className="text-[10px] uppercase tracking-[0.18em]"
+                          className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em]"
                           style={{ color: "rgba(91,59,38,0.55)" }}
                         >
                           Step
                         </span>
                       </div>
                       <h3
-                        className="font-serif text-xl sm:text-2xl leading-tight tracking-tight"
+                        className="font-serif text-lg sm:text-xl md:text-2xl leading-tight tracking-tight"
                         style={{ color: "#3a2618" }}
                       >
                         {step.title}
                       </h3>
                       <p
-                        className="mt-3 text-sm sm:text-[15px] leading-relaxed"
+                        className="mt-2 sm:mt-3 text-[12px] sm:text-sm md:text-[15px] leading-relaxed"
                         style={{ color: "rgba(58,38,24,0.8)" }}
                       >
                         {step.body}

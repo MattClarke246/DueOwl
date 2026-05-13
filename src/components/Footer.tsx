@@ -2,20 +2,19 @@ import { ArrowUpRight } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────
    Footer — Transparent overlay
-   Sits over the pool-at-base region of the full-page background
-   image. White type + strong shadows so it reads against the
-   illustrated water.
+   Mobile: compact single-column layout with smaller text.
+   Desktop: side-by-side logo + link columns.
    ───────────────────────────────────────────────────────────── */
 
 export function Footer() {
   return (
     <footer className="relative">
-      <div className="container relative z-10 py-8">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div className="container relative z-10 py-6 sm:py-8">
+        <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-2">
               <div
-                className="grid h-9 w-9 place-items-center rounded-xl"
+                className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-xl"
                 style={{
                   background:
                     "linear-gradient(180deg, #FFFCEC 0%, #F5E6B8 100%)",
@@ -24,14 +23,14 @@ export function Footer() {
                 }}
               >
                 <span
-                  className="font-serif text-lg leading-none"
+                  className="font-serif text-base sm:text-lg leading-none"
                   style={{ color: "#4F9928" }}
                 >
                   d
                 </span>
               </div>
               <span
-                className="font-serif text-xl tracking-tight text-white"
+                className="font-serif text-lg sm:text-xl tracking-tight text-white"
                 style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
               >
                 due
@@ -39,7 +38,7 @@ export function Footer() {
               </span>
             </div>
             <p
-              className="mt-4 max-w-xs text-sm leading-relaxed text-white/90"
+              className="mt-3 sm:mt-4 max-w-xs text-[13px] sm:text-sm leading-relaxed text-white/90"
               style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
             >
               The quiet way to collect what you&apos;re owed. Built for studios,
@@ -48,7 +47,7 @@ export function Footer() {
           </div>
 
           <div
-            className="grid grid-cols-2 gap-x-12 gap-y-2 text-sm sm:grid-cols-3"
+            className="grid grid-cols-3 gap-x-8 sm:gap-x-12 gap-y-2 text-[13px] sm:text-sm"
             style={{
               color: "rgba(255,255,255,0.92)",
               textShadow: "0 1px 8px rgba(15,40,70,0.55)",
@@ -61,12 +60,12 @@ export function Footer() {
             ].map((col) => (
               <div key={col.h}>
                 <p
-                  className="mb-3 text-[11px] uppercase tracking-[0.18em]"
+                  className="mb-2 sm:mb-3 text-[10px] sm:text-[11px] uppercase tracking-[0.18em]"
                   style={{ color: "rgba(255,253,236,0.75)" }}
                 >
                   {col.h}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {col.items.map((item) => (
                     <li key={item}>
                       <a
@@ -85,7 +84,7 @@ export function Footer() {
         </div>
 
         <div
-          className="mt-6 flex flex-col items-start justify-between gap-2 pt-4 text-xs sm:flex-row sm:items-center"
+          className="mt-5 sm:mt-6 flex flex-col items-start justify-between gap-1.5 sm:gap-2 pt-3 sm:pt-4 text-[10px] sm:text-xs sm:flex-row sm:items-center"
           style={{
             borderTop: "1px solid rgba(255,253,236,0.28)",
             color: "rgba(255,253,236,0.85)",
