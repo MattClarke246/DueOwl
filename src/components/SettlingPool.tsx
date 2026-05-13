@@ -76,43 +76,41 @@ const TIERS: Tier[] = [
 export function SettlingPool() {
   return (
     <section id="pricing" className="relative">
-      <div className="container relative z-10 py-10 sm:py-12 md:py-14">
+      <div className="container relative z-10 py-6 sm:py-8 md:py-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-8 sm:mb-10 max-w-2xl text-center"
+          className="mx-auto mb-6 sm:mb-8 max-w-2xl text-center"
         >
           <p
-            className="mb-4 text-xs uppercase tracking-[0.22em] text-white/90"
+            className="mb-2 text-xs uppercase tracking-[0.22em] text-white/90"
             style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
           >
             Pricing
           </p>
           <h2
-            className="font-serif text-balance text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl text-white"
+            className="font-serif text-balance text-2xl leading-tight tracking-tight sm:text-3xl md:text-4xl text-white"
             style={{
               textShadow:
                 "0 2px 22px rgba(15,40,70,0.6), 0 1px 4px rgba(15,40,70,0.5)",
             }}
           >
-            Honest pricing.
-            <br />
+            Honest pricing.{" "}
             <span className="italic" style={{ color: "#FFE9A1" }}>
               No surprises.
             </span>
           </h2>
           <p
-            className="mt-6 text-balance text-white/95"
+            className="mt-3 text-balance text-sm text-white/95"
             style={{ textShadow: "0 1px 10px rgba(15,40,70,0.55)" }}
           >
-            Start free. Upgrade only when Due Owl pays for itself — which it
-            usually does in the first reminder cycle.
+            Start free. Upgrade only when Due Owl pays for itself.
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.id}
@@ -125,8 +123,8 @@ export function SettlingPool() {
                 ease: "easeOut",
               }}
               className={cn(
-                "group relative flex flex-col rounded-3xl p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1",
-                tier.highlight ? "md:-mt-4 md:mb-4" : ""
+                "group relative flex flex-col rounded-2xl p-5 sm:p-6 transition-all duration-500 hover:-translate-y-1",
+                tier.highlight ? "md:-mt-3 md:mb-3" : ""
               )}
               style={
                 tier.highlight
@@ -165,45 +163,45 @@ export function SettlingPool() {
                 </div>
               )}
 
-              <div className="mb-6">
+              <div className="mb-3">
                 <h3
-                  className="font-serif text-2xl tracking-tight"
+                  className="font-serif text-xl tracking-tight"
                   style={{ color: tier.highlight ? "#8E5E3E" : "#23362A" }}
                 >
                   {tier.name}
                 </h3>
                 <p
-                  className="mt-2 text-sm leading-relaxed"
+                  className="mt-1 text-xs leading-snug"
                   style={{ color: "rgba(40,60,40,0.72)" }}
                 >
                   {tier.blurb}
                 </p>
               </div>
 
-              <div className="mb-8 flex items-baseline gap-1.5">
+              <div className="mb-4 flex items-baseline gap-1.5">
                 <span
-                  className="font-serif text-5xl tracking-tight"
+                  className="font-serif text-4xl tracking-tight"
                   style={{ color: "#23362A" }}
                 >
                   {tier.price}
                 </span>
                 <span
                   style={{ color: "rgba(40,60,40,0.6)" }}
-                  className="text-sm"
+                  className="text-xs"
                 >
                   {tier.cadence}
                 </span>
               </div>
 
-              <ul className="mb-10 space-y-3">
+              <ul className="mb-5 space-y-1.5">
                 {tier.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-3 text-[14.5px]"
+                    className="flex items-start gap-2 text-[13px] leading-snug"
                     style={{ color: "rgba(35,54,42,0.92)" }}
                   >
                     <span
-                      className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
+                      className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full"
                       style={{
                         background: tier.highlight
                           ? "rgba(229,181,71,0.22)"
@@ -211,7 +209,7 @@ export function SettlingPool() {
                         color: tier.highlight ? "#8E5E3E" : "#4F9928",
                       }}
                     >
-                      <Check className="h-3 w-3" strokeWidth={3} />
+                      <Check className="h-2.5 w-2.5" strokeWidth={3} />
                     </span>
                     <span>{f}</span>
                   </li>
@@ -220,7 +218,7 @@ export function SettlingPool() {
 
               <div className="mt-auto">
                 <Button
-                  size="lg"
+                  size="sm"
                   variant={tier.highlight ? "bronze" : "outline"}
                   className="w-full"
                 >
@@ -232,7 +230,7 @@ export function SettlingPool() {
         </div>
 
         <p
-          className="mt-12 text-center text-xs text-white/85"
+          className="mt-6 text-center text-[11px] text-white/85"
           style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
         >
           All plans include unlimited clients, end-to-end encryption, and a

@@ -60,7 +60,7 @@ export function WaterfallPipeline() {
   return (
     <section id="how" className="relative">
       <div className="container relative z-10 py-6 sm:py-8 md:py-10">
-        <div className="md:ml-auto md:max-w-[56%]">
+        <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

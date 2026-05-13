@@ -10,8 +10,8 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="relative">
-      <div className="container relative z-10 py-14">
-        <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+      <div className="container relative z-10 py-8">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-2">
               <div
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         <div
-          className="mt-12 flex flex-col items-start justify-between gap-2 pt-6 text-xs sm:flex-row sm:items-center"
+          className="mt-6 flex flex-col items-start justify-between gap-2 pt-4 text-xs sm:flex-row sm:items-center"
           style={{
             borderTop: "1px solid rgba(255,253,236,0.28)",
             color: "rgba(255,253,236,0.85)",
