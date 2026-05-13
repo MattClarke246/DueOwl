@@ -125,53 +125,9 @@ export function WaterfallPipeline() {
         }}
       />
 
-      <div className="container relative z-10 py-10 sm:py-12 md:py-16 lg:py-24">
-        
-        {/* DESKTOP-ONLY: Decorative animated waterfall element on the left side */}
-        <div className="hidden md:block absolute left-4 lg:left-8 top-16 bottom-16 w-[35%] lg:w-[40%] opacity-90 pointer-events-none">
-          {/* Main waterfall column */}
-          <div
-            className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full rounded-full overflow-hidden"
-            style={{
-              background: "linear-gradient(180deg, rgba(234,246,253,0) 0%, rgba(255,255,255,0.4) 15%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 85%, rgba(234,246,253,0) 100%)",
-              boxShadow: "0 0 60px 20px rgba(255,255,255,0.15)",
-              maskImage: "linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)",
-            }}
-          >
-            {/* Animated cascades inside */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "repeating-linear-gradient(180deg, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.4) 4px, transparent 4px, transparent 12px)",
-                backgroundSize: "100% 36px",
-                animation: "waterfallCascade 1.5s linear infinite",
-              }}
-            />
-            {/* Second layer moving faster */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "repeating-linear-gradient(180deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 2px, transparent 2px, transparent 24px)",
-                backgroundSize: "50% 64px",
-                backgroundPosition: "center",
-                animation: "waterfallCascade 1s linear infinite",
-              }}
-            />
-          </div>
-          
-          {/* Base mist glow */}
-          <div
-            className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[120%] h-32 rounded-[100%]"
-            style={{
-              background: "radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%, transparent 70%)",
-              filter: "blur(12px)",
-            }}
-          />
-        </div>
-
+      <div className="container relative z-10 py-10 sm:py-12 md:py-10">
         {/* Desktop: pushed right · Mobile: full width centered */}
-        <div className="relative z-10 md:ml-auto md:max-w-[50%] lg:max-w-[45%]">
+        <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

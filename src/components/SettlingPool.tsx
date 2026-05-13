@@ -101,13 +101,13 @@ export function SettlingPool() {
         }}
       />
 
-      <div className="container relative z-10 pt-8 pb-16 sm:pt-10 sm:pb-24 md:pt-12 md:pb-40 lg:pb-48">
+      <div className="container relative z-10 pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-6 sm:mb-8 md:mb-12 max-w-2xl text-center"
+          className="mx-auto mb-4 sm:mb-6 md:mb-8 max-w-2xl text-center"
         >
           <p
             className="mb-3 text-[11px] sm:text-xs font-medium uppercase tracking-[0.24em] text-white/85"
@@ -147,7 +147,7 @@ export function SettlingPool() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mb-10 sm:mb-14 flex items-center justify-center gap-3"
+          className="mx-auto mb-6 sm:mb-8 flex items-center justify-center gap-3"
         >
           <span className="text-sm font-medium text-white/90" style={{ textShadow: "0 1px 4px rgba(15,40,70,0.5)" }}>Monthly</span>
           <button
@@ -181,9 +181,9 @@ export function SettlingPool() {
                 ease: "easeOut",
               }}
               className={cn(
-                "group relative flex flex-col rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-2",
+                "group relative flex flex-col rounded-2xl p-4 sm:p-5 transition-all duration-500 hover:-translate-y-2",
                 tier.highlight
-                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-6 md:mb-6 z-10"
+                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-4 md:mb-4 z-10"
                   : "z-0"
               )}
               style={
@@ -237,7 +237,7 @@ export function SettlingPool() {
 
               <div className="mb-3">
                 <h3
-                  className="font-serif text-xl sm:text-2xl"
+                  className="font-serif text-lg sm:text-xl"
                   style={{
                     color: tier.highlight ? "#8E5E3E" : "#1d2620",
                     letterSpacing: "-0.018em",
@@ -246,7 +246,7 @@ export function SettlingPool() {
                   {tier.name}
                 </h3>
                 <p
-                  className="mt-1.5 text-[13px]"
+                  className="mt-1 text-[12px]"
                   style={{
                     color: "rgba(40,60,40,0.72)",
                     lineHeight: 1.45,
@@ -259,7 +259,7 @@ export function SettlingPool() {
 
               <div className="mb-4 flex items-baseline gap-1.5">
                 <span
-                  className="font-serif text-[2.5rem] sm:text-5xl"
+                  className="font-serif text-3xl sm:text-4xl"
                   style={{
                     color: "#1d2620",
                     letterSpacing: "-0.028em",
@@ -280,7 +280,7 @@ export function SettlingPool() {
                 {tier.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-2 text-[13px] sm:text-[14px]"
+                    className="flex items-start gap-2 text-[12px] sm:text-[13px]"
                     style={{
                       color: "rgba(29,38,32,0.92)",
                       lineHeight: 1.45,

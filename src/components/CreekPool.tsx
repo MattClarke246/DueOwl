@@ -66,19 +66,15 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[220px] lg:-mt-[300px]"
         >
-          {/* Readability scrim — soft frosted glass pill behind the hero text block 
-              to make the text pop while letting the background art shine through. */}
+          {/* Readability scrim — soft radial darken behind the entire
+              hero text block so white text reads at AA contrast no
+              matter where it sits over the landscape illustration. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] sm:w-[110%] h-[130%] sm:h-[120%] -z-10 rounded-[3rem] sm:rounded-[4rem]"
+            className="pointer-events-none absolute inset-x-[-8%] inset-y-[-12%] -z-10"
             style={{
-              background: "rgba(15,40,70,0.12)",
-              backdropFilter: "blur(8px)",
-              WebkitBackdropFilter: "blur(8px)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 0 40px 20px rgba(15,40,70,0.08)",
-              maskImage: "radial-gradient(ellipse at center, black 40%, transparent 70%)",
-              WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 70%)"
+              background:
+                "radial-gradient(60% 55% at 50% 45%, rgba(15,40,70,0.42) 0%, rgba(15,40,70,0.18) 55%, rgba(15,40,70,0) 80%)",
             }}
           />
 
