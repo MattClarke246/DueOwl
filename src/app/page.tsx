@@ -38,7 +38,7 @@ export default function Page() {
         playsInline
         onEnded={() => setIsVideoFinished(true)}
         onError={() => setIsVideoFinished(true)}
-        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
+        className={`absolute top-0 left-0 w-full h-auto pointer-events-none transition-opacity duration-1000 ${isVideoFinished ? 'opacity-0' : 'opacity-100'}`}
         style={{ zIndex: 0 }}
       />
 

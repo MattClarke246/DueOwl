@@ -42,7 +42,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           animate={isVideoFinished ? "show" : "hidden"}
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center relative z-20 -mt-12 sm:-mt-16 md:-mt-[160px] lg:-mt-[220px]"
+          className="mx-auto max-w-4xl text-center relative z-20 -mt-16 sm:-mt-24 md:-mt-[220px] lg:-mt-[300px]"
         >
 
 
@@ -121,7 +121,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-16 sm:mt-24 md:mt-[180px] lg:mt-[240px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
+          className="mx-auto mt-20 sm:mt-28 md:mt-[240px] lg:mt-[320px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
