@@ -125,9 +125,53 @@ export function WaterfallPipeline() {
         }}
       />
 
-      <div className="container relative z-10 py-10 sm:py-12 md:py-10">
+      <div className="container relative z-10 py-10 sm:py-12 md:py-16 lg:py-24">
+        
+        {/* DESKTOP-ONLY: Decorative animated waterfall element on the left side */}
+        <div className="hidden md:block absolute left-4 lg:left-8 top-16 bottom-16 w-[35%] lg:w-[40%] opacity-90 pointer-events-none">
+          {/* Main waterfall column */}
+          <div
+            className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full rounded-full overflow-hidden"
+            style={{
+              background: "linear-gradient(180deg, rgba(234,246,253,0) 0%, rgba(255,255,255,0.4) 15%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 85%, rgba(234,246,253,0) 100%)",
+              boxShadow: "0 0 60px 20px rgba(255,255,255,0.15)",
+              maskImage: "linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)",
+            }}
+          >
+            {/* Animated cascades inside */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "repeating-linear-gradient(180deg, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.4) 4px, transparent 4px, transparent 12px)",
+                backgroundSize: "100% 36px",
+                animation: "waterfallCascade 1.5s linear infinite",
+              }}
+            />
+            {/* Second layer moving faster */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "repeating-linear-gradient(180deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 2px, transparent 2px, transparent 24px)",
+                backgroundSize: "50% 64px",
+                backgroundPosition: "center",
+                animation: "waterfallCascade 1s linear infinite",
+              }}
+            />
+          </div>
+          
+          {/* Base mist glow */}
+          <div
+            className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[120%] h-32 rounded-[100%]"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%, transparent 70%)",
+              filter: "blur(12px)",
+            }}
+          />
+        </div>
+
         {/* Desktop: pushed right · Mobile: full width centered */}
-        <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
+        <div className="relative z-10 md:ml-auto md:max-w-[50%] lg:max-w-[45%]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +262,7 @@ export function WaterfallPipeline() {
                     </div>
 
                     <div
-                      className="rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-300 hover:-translate-y-0.5"
+                      className="group/card rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-500 hover:-translate-y-1 relative overflow-hidden"
                       style={{
                         background:
                           "linear-gradient(180deg, rgba(255,253,236,0.94) 0%, rgba(248,238,212,0.9) 100%)",
@@ -229,7 +273,14 @@ export function WaterfallPipeline() {
                           "0 1px 0 rgba(255,255,255,0.6) inset, 0 18px 40px -16px rgba(15,40,70,0.5)",
                       }}
                     >
-                      <div className="mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3">
+                      {/* noise texture overlay */}
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-overlay"
+                        style={{ backgroundImage: "url(/noise.png)" }}
+                      />
+                      
+                      <div className="mb-2 sm:mb-3 flex items-center gap-2 sm:gap-3 relative">
                         <span
                           className="font-serif text-xl sm:text-2xl md:text-3xl tracking-tight"
                           style={{ color: "#8E5E3E" }}

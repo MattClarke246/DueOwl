@@ -66,16 +66,19 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[220px] lg:-mt-[300px]"
         >
-          {/* Readability scrim — soft radial darken behind the entire
-              hero text block so white text reads at AA contrast no
-              matter where it sits over the landscape illustration. */}
+          {/* Readability scrim — soft frosted glass pill behind the hero text block 
+              to make the text pop while letting the background art shine through. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-[-8%] inset-y-[-12%] -z-10"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] sm:w-[110%] h-[130%] sm:h-[120%] -z-10 rounded-[3rem] sm:rounded-[4rem]"
             style={{
-              background:
-                "radial-gradient(60% 55% at 50% 45%, rgba(15,40,70,0.42) 0%, rgba(15,40,70,0.18) 55%, rgba(15,40,70,0) 80%)",
-              filter: "blur(2px)",
+              background: "rgba(15,40,70,0.12)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 0 40px 20px rgba(15,40,70,0.08)",
+              maskImage: "radial-gradient(ellipse at center, black 40%, transparent 70%)",
+              WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 70%)"
             }}
           />
 
@@ -171,19 +174,34 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
                 key={feat.title}
                 variants={FADE_UP}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="group relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 transition-all duration-500 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 transition-all duration-500 hover:-translate-y-2"
                 style={{
                   background:
                     "linear-gradient(165deg, #5FA12D 0%, #4F9928 45%, #3D7A25 100%)",
-                  border: "1px solid rgba(255,233,161,0.38)",
                   boxShadow:
-                    "0 1px 0 rgba(255,233,161,0.35) inset, 0 22px 50px -18px rgba(20,60,15,0.55), 0 8px 20px -6px rgba(15,40,70,0.25)",
+                    "0 1px 0 rgba(255,233,161,0.35) inset, 0 22px 50px -18px rgba(20,60,15,0.55), 0 12px 30px -6px rgba(15,40,70,0.4)",
                 }}
               >
+                {/* noise texture overlay */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-overlay"
+                  style={{ backgroundImage: "url(/noise.png)" }}
+                />
+                
+                {/* gold top border highlight */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 h-[2px] opacity-60"
+                  style={{
+                    background: "linear-gradient(90deg, transparent 0%, #E5B547 50%, transparent 100%)"
+                  }}
+                />
+
                 {/* warm highlight glow in the top-right corner */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -top-8 -right-8 h-32 w-32 rounded-full opacity-50 transition-opacity duration-500 group-hover:opacity-70"
+                  className="pointer-events-none absolute -top-8 -right-8 h-32 w-32 rounded-full opacity-50 transition-opacity duration-500 group-hover:opacity-80"
                   style={{
                     background:
                       "radial-gradient(circle, rgba(255,233,161,0.55) 0%, transparent 65%)",
@@ -191,15 +209,15 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
                   }}
                 />
                 <div
-                  className="relative mb-4 sm:mb-5 grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-xl sm:rounded-2xl transition-all duration-300 group-hover:scale-105"
+                  className="relative mb-4 sm:mb-5 grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-xl sm:rounded-2xl transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1"
                   style={{
                     background:
                       "linear-gradient(180deg, rgba(255,253,236,0.95) 0%, rgba(245,230,184,0.85) 100%)",
                     boxShadow:
-                      "0 1px 0 rgba(255,255,255,0.7) inset, 0 6px 14px -4px rgba(20,60,15,0.35)",
+                      "0 1px 0 rgba(255,255,255,0.7) inset, 0 8px 20px -4px rgba(20,60,15,0.45)",
                   }}
                 >
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" style={{ color: "#4F9928" }} />
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-500 group-hover:rotate-6" style={{ color: "#4F9928" }} />
                 </div>
                 <h3
                   className="relative font-serif text-xl sm:text-2xl mb-2"

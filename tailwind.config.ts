@@ -96,10 +96,14 @@ const config: Config = {
           "0%,100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        "shimmer-sweep": {
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.8s ease-out both",
         "float": "float 6s ease-in-out infinite",
+        "shimmer-sweep": "shimmer-sweep 3s ease-in-out infinite",
       },
     },
   },

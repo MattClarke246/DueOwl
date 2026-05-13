@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default:
           "bg-stone-900 text-cream-50 hover:bg-stone-800 shadow-soft",
         bronze:
-          "bg-gradient-to-b from-bronze-300 to-bronze-400 text-stone-900 hover:from-bronze-200 hover:to-bronze-300 shadow-[0_8px_24px_-8px_rgba(168,119,38,0.45)]",
+          "relative overflow-hidden bg-gradient-to-b from-bronze-300 to-bronze-400 text-stone-900 shadow-[0_8px_24px_-8px_rgba(168,119,38,0.45)] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-8px_rgba(168,119,38,0.55)] after:absolute after:inset-0 after:z-10 after:translate-x-[-100%] after:animate-[shimmer-sweep_3s_infinite] after:bg-gradient-to-r after:from-transparent after:via-white/40 after:to-transparent",
         outline:
           "border border-stone-300/70 bg-white/60 backdrop-blur text-stone-900 hover:bg-white/90",
         ghost: "text-stone-700 hover:text-stone-900 hover:bg-stone-100/70",

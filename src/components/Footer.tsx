@@ -20,7 +20,37 @@ export function Footer() {
         }}
       />
       <div className="container relative z-10 py-10 sm:py-12 md:pt-16 md:pb-12">
-        <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
+        
+        {/* FINAL CTA BANNER */}
+        <div className="mx-auto mb-16 md:mb-24 max-w-4xl rounded-[2.5rem] p-8 sm:p-12 md:p-16 text-center relative overflow-hidden"
+          style={{
+            background: "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            border: "1px solid rgba(255,255,255,0.15)",
+            boxShadow: "0 1px 0 rgba(255,255,255,0.2) inset, 0 30px 60px -20px rgba(15,40,70,0.5)",
+          }}
+        >
+          <div className="absolute inset-0 z-0 opacity-30" style={{ background: "radial-gradient(ellipse at top, rgba(255,255,255,0.4) 0%, transparent 60%)" }} />
+          
+          <h2 className="relative z-10 font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4" style={{ textShadow: "0 2px 16px rgba(15,40,70,0.5)", letterSpacing: "-0.02em" }}>
+            Ready to get paid on time?
+          </h2>
+          <p className="relative z-10 text-white/90 text-[15px] sm:text-[17px] mb-8 max-w-lg mx-auto" style={{ textShadow: "0 1px 8px rgba(15,40,70,0.4)" }}>
+            Join growing studios and freelancers who use Due Owl to put their accounts receivable on autopilot.
+          </p>
+          <button className="relative z-10 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-[15px] font-medium tracking-tight text-stone-900 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            style={{
+              background: "linear-gradient(180deg, #FFFFFF 0%, #F5E6B8 100%)",
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.5) inset, 0 8px 24px -8px rgba(20,60,15,0.5)",
+            }}
+          >
+            Get started free
+            <ArrowUpRight className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="flex flex-col items-start justify-between gap-10 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -48,7 +48,7 @@ export default function Page() {
         aria-hidden
         className="hidden md:block absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "url(/Due_Owl_Background.png)",
+          backgroundImage: "url(/Due_Owl_Background_Updated.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top center",
           backgroundSize: "100% auto",

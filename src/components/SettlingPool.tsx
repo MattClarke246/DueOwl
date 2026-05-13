@@ -141,6 +141,32 @@ export function SettlingPool() {
           </p>
         </motion.div>
 
+        {/* Pricing Toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mx-auto mb-10 sm:mb-14 flex items-center justify-center gap-3"
+        >
+          <span className="text-sm font-medium text-white/90" style={{ textShadow: "0 1px 4px rgba(15,40,70,0.5)" }}>Monthly</span>
+          <button
+            className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.4)" }}
+            aria-label="Toggle annual billing"
+          >
+            <span
+              className="inline-block h-4 w-4 translate-x-6 rounded-full bg-white transition-transform duration-300 shadow-sm"
+            />
+          </button>
+          <div className="flex items-center gap-2 text-sm font-medium text-white/90" style={{ textShadow: "0 1px 4px rgba(15,40,70,0.5)" }}>
+            <span>Annually</span>
+            <span className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide text-stone-900" style={{ background: "#E5B547", boxShadow: "0 2px 8px rgba(182,134,42,0.6)" }}>
+              SAVE 20%
+            </span>
+          </div>
+        </motion.div>
+
         {/* Mobile: reorder so "Medium" (highlighted) card appears first */}
         <div className="mx-auto grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3">
           {TIERS.map((tier, i) => (
@@ -155,10 +181,10 @@ export function SettlingPool() {
                 ease: "easeOut",
               }}
               className={cn(
-                "group relative flex flex-col rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-1",
+                "group relative flex flex-col rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-2",
                 tier.highlight
-                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-3 md:mb-3"
-                  : ""
+                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-6 md:mb-6 z-10"
+                  : "z-0"
               )}
               style={
                 tier.highlight
@@ -183,18 +209,30 @@ export function SettlingPool() {
               }
             >
               {tier.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <>
+                  {/* Outer glow behind the highlighted card */}
                   <div
-                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-tight text-white shadow-soft"
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] opacity-50 transition-opacity duration-500 group-hover:opacity-80 hidden md:block"
                     style={{
-                      background:
-                        "linear-gradient(180deg, #E5B547 0%, #B6862A 100%)",
+                      background: "radial-gradient(ellipse at center, rgba(229,181,71,0.4) 0%, transparent 70%)",
+                      filter: "blur(20px)",
                     }}
-                  >
-                    <Sparkles className="h-3 w-3" />
-                    Most loved
+                  />
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <div
+                      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-tight text-white shadow-soft relative overflow-hidden"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #E5B547 0%, #B6862A 100%)",
+                      }}
+                    >
+                      <div className="absolute inset-0 water-shimmer" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)", width: "200%" }} />
+                      <Sparkles className="h-3 w-3 relative z-10" />
+                      <span className="relative z-10">Most loved</span>
+                    </div>
                   </div>
-                </div>
+                </>
               )}
 
               <div className="mb-3">
