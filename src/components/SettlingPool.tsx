@@ -141,34 +141,10 @@ export function SettlingPool() {
           </p>
         </motion.div>
 
-        {/* Pricing Toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mb-6 sm:mb-8 flex items-center justify-center gap-3"
-        >
-          <span className="text-sm font-medium text-white/90" style={{ textShadow: "0 1px 4px rgba(15,40,70,0.5)" }}>Monthly</span>
-          <button
-            className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
-            style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.4)" }}
-            aria-label="Toggle annual billing"
-          >
-            <span
-              className="inline-block h-4 w-4 translate-x-6 rounded-full bg-white transition-transform duration-300 shadow-sm"
-            />
-          </button>
-          <div className="flex items-center gap-2 text-sm font-medium text-white/90" style={{ textShadow: "0 1px 4px rgba(15,40,70,0.5)" }}>
-            <span>Annually</span>
-            <span className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide text-stone-900" style={{ background: "#E5B547", boxShadow: "0 2px 8px rgba(182,134,42,0.6)" }}>
-              SAVE 20%
-            </span>
-          </div>
-        </motion.div>
+
 
         {/* Mobile: reorder so "Medium" (highlighted) card appears first */}
-        <div className="mx-auto grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3 items-stretch">
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.id}
@@ -181,9 +157,9 @@ export function SettlingPool() {
                 ease: "easeOut",
               }}
               className={cn(
-                "group relative flex flex-col rounded-2xl p-4 sm:p-5 transition-all duration-500 hover:-translate-y-2",
+                "group relative flex flex-col h-full rounded-2xl p-4 sm:p-5 transition-all duration-500 hover:-translate-y-2",
                 tier.highlight
-                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 md:ring-0 md:-mt-4 md:mb-4 z-10"
+                  ? "order-first md:order-none ring-2 ring-[#E5B547]/55 z-10"
                   : "z-0"
               )}
               style={
