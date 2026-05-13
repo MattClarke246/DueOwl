@@ -21,12 +21,15 @@ export function Navbar({ isVideoFinished = true }: { isVideoFinished?: boolean }
             <div className="grid h-8 w-8 place-items-center rounded-xl bg-owl-500 text-cream-50 shadow-soft">
               <span className="font-serif text-base leading-none">d</span>
             </div>
-            <span className="font-serif text-xl tracking-tight">
+            <span
+              className="font-serif text-xl"
+              style={{ letterSpacing: "-0.02em" }}
+            >
               due<span className="text-bronze-400">owl</span>
             </span>
           </div>
 
-          <nav className="hidden items-center gap-8 text-sm text-stone-600 md:flex">
+          <nav className="hidden items-center gap-8 text-[15px] font-medium text-stone-700 md:flex" style={{ letterSpacing: "-0.01em" }}>
             <a className="hover:text-stone-900 transition-colors duration-300" href="#features">
               Features
             </a>

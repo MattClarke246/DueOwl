@@ -67,6 +67,27 @@ export function Hero() {
               "radial-gradient(120% 100% at 30% 100%, #7FC04F 0%, #A9D77E 45%, transparent 70%), radial-gradient(140% 100% at 80% 100%, #6FB23A 0%, #8CC74A 50%, transparent 75%)",
           }}
         />
+
+        {/* Wordmark + tagline — the brand moment that replaces the
+            desktop intro video on mobile. */}
+        <div className="relative z-10 flex h-full min-h-[62svh] flex-col items-center justify-center px-6 pt-10">
+          <span
+            className="font-serif leading-none text-white"
+            style={{
+              fontSize: "clamp(3.25rem, 16vw, 5.25rem)",
+              letterSpacing: "-0.02em",
+              textShadow: "0 2px 18px rgba(15,40,70,0.35)",
+            }}
+          >
+            due<span style={{ color: "#FFE9A1" }}>owl</span>
+          </span>
+          <p
+            className="mt-3 text-[11px] font-medium uppercase tracking-[0.28em] text-white/90"
+            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.35)" }}
+          >
+            Automated invoice reminders
+          </p>
+        </div>
       </section>
     </>
   );

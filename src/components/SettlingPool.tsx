@@ -110,16 +110,17 @@ export function SettlingPool() {
           className="mx-auto mb-6 sm:mb-8 md:mb-12 max-w-2xl text-center"
         >
           <p
-            className="mb-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/90"
-            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+            className="mb-3 text-[11px] sm:text-xs font-medium uppercase tracking-[0.24em] text-white/85"
+            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.4)" }}
           >
             Pricing
           </p>
           <h2
-            className="font-serif text-balance text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl lg:text-4xl text-white"
+            className="font-serif text-balance text-white text-3xl sm:text-4xl md:text-5xl"
             style={{
-              textShadow:
-                "0 2px 22px rgba(15,40,70,0.6), 0 1px 4px rgba(15,40,70,0.5)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.022em",
+              textShadow: "0 2px 16px rgba(15,40,70,0.4)",
             }}
           >
             Honest pricing.{" "}
@@ -128,8 +129,13 @@ export function SettlingPool() {
             </span>
           </h2>
           <p
-            className="mt-2 sm:mt-3 text-balance text-[13px] sm:text-sm text-white/95"
-            style={{ textShadow: "0 1px 10px rgba(15,40,70,0.55)" }}
+            className="mt-4 text-balance text-white/95"
+            style={{
+              fontSize: "clamp(0.9375rem, 1.2vw, 1.0625rem)",
+              lineHeight: 1.5,
+              letterSpacing: "-0.005em",
+              textShadow: "0 1px 8px rgba(15,40,70,0.4)",
+            }}
           >
             Start free. Upgrade only when Due Owl pays for itself.
           </p>
@@ -191,42 +197,57 @@ export function SettlingPool() {
                 </div>
               )}
 
-              <div className="mb-2 sm:mb-3">
+              <div className="mb-3">
                 <h3
-                  className="font-serif text-lg sm:text-xl tracking-tight"
-                  style={{ color: tier.highlight ? "#8E5E3E" : "#23362A" }}
+                  className="font-serif text-xl sm:text-2xl"
+                  style={{
+                    color: tier.highlight ? "#8E5E3E" : "#1d2620",
+                    letterSpacing: "-0.018em",
+                  }}
                 >
                   {tier.name}
                 </h3>
                 <p
-                  className="mt-1 text-[11px] sm:text-xs leading-snug"
-                  style={{ color: "rgba(40,60,40,0.72)" }}
+                  className="mt-1.5 text-[13px]"
+                  style={{
+                    color: "rgba(40,60,40,0.72)",
+                    lineHeight: 1.45,
+                    letterSpacing: "-0.003em",
+                  }}
                 >
                   {tier.blurb}
                 </p>
               </div>
 
-              <div className="mb-3 sm:mb-4 flex items-baseline gap-1.5">
+              <div className="mb-4 flex items-baseline gap-1.5">
                 <span
-                  className="font-serif text-3xl sm:text-4xl tracking-tight"
-                  style={{ color: "#23362A" }}
+                  className="font-serif text-[2.5rem] sm:text-5xl"
+                  style={{
+                    color: "#1d2620",
+                    letterSpacing: "-0.028em",
+                    lineHeight: 1,
+                  }}
                 >
                   {tier.price}
                 </span>
                 <span
-                  style={{ color: "rgba(40,60,40,0.6)" }}
-                  className="text-[11px] sm:text-xs"
+                  style={{ color: "rgba(40,60,40,0.62)", letterSpacing: "-0.005em" }}
+                  className="text-[12px] sm:text-[13px] font-medium"
                 >
                   {tier.cadence}
                 </span>
               </div>
 
-              <ul className="mb-4 sm:mb-5 space-y-1 sm:space-y-1.5">
+              <ul className="mb-5 space-y-2">
                 {tier.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-2 text-[12px] sm:text-[13px] leading-snug"
-                    style={{ color: "rgba(35,54,42,0.92)" }}
+                    className="flex items-start gap-2 text-[13px] sm:text-[14px]"
+                    style={{
+                      color: "rgba(29,38,32,0.92)",
+                      lineHeight: 1.45,
+                      letterSpacing: "-0.003em",
+                    }}
                   >
                     <span
                       className="mt-0.5 grid h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 place-items-center rounded-full"
@@ -258,8 +279,11 @@ export function SettlingPool() {
         </div>
 
         <p
-          className="mt-4 sm:mt-6 text-center text-[10px] sm:text-[11px] text-white/85"
-          style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+          className="mt-5 sm:mt-7 text-center text-[12px] sm:text-[13px] text-white/85"
+          style={{
+            letterSpacing: "-0.005em",
+            textShadow: "0 1px 6px rgba(15,40,70,0.4)",
+          }}
         >
           All plans include unlimited clients, end-to-end encryption, and a
           30-day money-back guarantee.

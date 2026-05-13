@@ -136,16 +136,17 @@ export function WaterfallPipeline() {
             className="mb-5 sm:mb-6 md:mb-8"
           >
             <p
-              className="mb-3 sm:mb-4 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white/90"
-              style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+              className="mb-4 text-[11px] sm:text-xs font-medium uppercase tracking-[0.24em] text-white/85"
+              style={{ textShadow: "0 1px 8px rgba(15,40,70,0.4)" }}
             >
               How it works
             </p>
             <h2
-              className="font-serif text-balance text-2xl leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+              className="font-serif text-balance text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
               style={{
-                textShadow:
-                  "0 2px 22px rgba(15,40,70,0.6), 0 1px 4px rgba(15,40,70,0.5)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.022em",
+                textShadow: "0 2px 16px rgba(15,40,70,0.4)",
               }}
             >
               Four quiet steps,
@@ -155,8 +156,13 @@ export function WaterfallPipeline() {
               </span>
             </h2>
             <p
-              className="mt-4 sm:mt-6 max-w-lg text-balance text-white/95 text-[13px] sm:text-sm md:text-base"
-              style={{ textShadow: "0 1px 10px rgba(15,40,70,0.55)" }}
+              className="mt-5 sm:mt-6 max-w-lg text-balance text-white/95"
+              style={{
+                fontSize: "clamp(0.9375rem, 1.2vw, 1.0625rem)",
+                lineHeight: 1.5,
+                letterSpacing: "-0.005em",
+                textShadow: "0 1px 8px rgba(15,40,70,0.4)",
+              }}
             >
               Every step runs on its own. You set the cadence once — Due Owl
               handles the rest with the kind of patience the work deserves.
@@ -245,14 +251,22 @@ export function WaterfallPipeline() {
                         </span>
                       </div>
                       <h3
-                        className="font-serif text-lg sm:text-xl md:text-2xl leading-tight tracking-tight"
-                        style={{ color: "#3a2618" }}
+                        className="font-serif text-xl sm:text-2xl md:text-[1.625rem]"
+                        style={{
+                          color: "#1F140A",
+                          lineHeight: 1.15,
+                          letterSpacing: "-0.018em",
+                        }}
                       >
                         {step.title}
                       </h3>
                       <p
-                        className="mt-2 sm:mt-3 text-[12px] sm:text-sm md:text-[15px] leading-relaxed"
-                        style={{ color: "rgba(58,38,24,0.8)" }}
+                        className="mt-2 sm:mt-3 text-[14px] sm:text-[15px] md:text-[16px]"
+                        style={{
+                          color: "rgba(31,20,10,0.78)",
+                          lineHeight: 1.55,
+                          letterSpacing: "-0.003em",
+                        }}
                       >
                         {step.body}
                       </p>

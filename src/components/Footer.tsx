@@ -40,16 +40,23 @@ export function Footer() {
                 </span>
               </div>
               <span
-                className="font-serif text-lg sm:text-xl tracking-tight text-white"
-                style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+                className="font-serif text-xl sm:text-2xl text-white"
+                style={{
+                  letterSpacing: "-0.02em",
+                  textShadow: "0 1px 8px rgba(15,40,70,0.4)",
+                }}
               >
                 due
                 <span style={{ color: "#FFE9A1" }}>owl</span>
               </span>
             </div>
             <p
-              className="mt-3 sm:mt-4 max-w-xs text-[13px] sm:text-sm leading-relaxed text-white/90"
-              style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+              className="mt-3 sm:mt-4 max-w-xs text-[14px] sm:text-[15px] text-white/90"
+              style={{
+                lineHeight: 1.5,
+                letterSpacing: "-0.005em",
+                textShadow: "0 1px 6px rgba(15,40,70,0.35)",
+              }}
             >
               The quiet way to collect what you&apos;re owed. Built for studios,
               consultants, and growing firms.
@@ -57,10 +64,11 @@ export function Footer() {
           </div>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-4 sm:gap-y-2 text-[13px] sm:text-sm w-full md:w-auto"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-4 sm:gap-y-2 text-[14px] sm:text-[14px] w-full md:w-auto"
             style={{
               color: "rgba(255,255,255,0.92)",
-              textShadow: "0 1px 8px rgba(15,40,70,0.55)",
+              letterSpacing: "-0.005em",
+              textShadow: "0 1px 6px rgba(15,40,70,0.35)",
             }}
           >
             {[

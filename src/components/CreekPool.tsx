@@ -66,15 +66,27 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[220px] lg:-mt-[300px]"
         >
-
+          {/* Readability scrim — soft radial darken behind the entire
+              hero text block so white text reads at AA contrast no
+              matter where it sits over the landscape illustration. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[-8%] inset-y-[-12%] -z-10"
+            style={{
+              background:
+                "radial-gradient(60% 55% at 50% 45%, rgba(15,40,70,0.42) 0%, rgba(15,40,70,0.18) 55%, rgba(15,40,70,0) 80%)",
+              filter: "blur(2px)",
+            }}
+          />
 
           <motion.h1
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="font-serif text-balance text-3xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl lg:text-[5.5rem] sm:leading-[1.05]"
+            className="font-serif text-balance text-[2.25rem] sm:text-5xl md:text-7xl lg:text-[5.5rem]"
             style={{
-              textShadow:
-                "0 4px 32px rgba(15,40,70,0.6), 0 2px 8px rgba(15,40,70,0.5)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.022em",
+              textShadow: "0 2px 18px rgba(15,40,70,0.45)",
             }}
           >
             <span
@@ -86,7 +98,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
               Automated invoice reminders.
             </span>
             <br />
-            <span className="italic text-white/90">Seamless flow.</span>{" "}
+            <span className="italic text-white/95">Seamless flow.</span>{" "}
             <span
               className="inline-block bg-clip-text text-transparent"
               style={{
@@ -101,9 +113,12 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mx-auto mt-4 sm:mt-7 max-w-xl text-balance text-sm leading-relaxed text-white sm:text-base md:text-lg"
+            className="mx-auto mt-5 sm:mt-7 max-w-xl text-balance text-white"
             style={{
-              textShadow: "0 1px 12px rgba(15,40,70,0.55)",
+              fontSize: "clamp(1rem, 1.6vw, 1.15rem)",
+              lineHeight: 1.5,
+              letterSpacing: "-0.005em",
+              textShadow: "0 1px 10px rgba(15,40,70,0.4)",
             }}
           >
             Due Owl follows up on late invoices for you — politely, on schedule,
@@ -114,7 +129,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.div
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-6 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mt-7 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Button size="lg" variant="bronze" className="w-full sm:w-auto">
               Get started free
@@ -132,8 +147,11 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-white/85"
-            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+            className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] font-medium text-white/90"
+            style={{
+              letterSpacing: "-0.005em",
+              textShadow: "0 1px 6px rgba(15,40,70,0.4)",
+            }}
           >
             Free forever for up to 5 invoices a month · No card required
           </motion.p>
@@ -168,14 +186,21 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <h3
-                  className="font-serif text-lg sm:text-xl tracking-tight text-white mb-1.5 sm:mb-2"
-                  style={{ textShadow: "0 1px 8px rgba(15,40,70,0.45)" }}
+                  className="font-serif text-xl sm:text-2xl text-white mb-2"
+                  style={{
+                    letterSpacing: "-0.018em",
+                    textShadow: "0 1px 8px rgba(15,40,70,0.35)",
+                  }}
                 >
                   {feat.title}
                 </h3>
                 <p
-                  className="text-[13px] sm:text-sm leading-relaxed text-white/90"
-                  style={{ textShadow: "0 1px 6px rgba(15,40,70,0.45)" }}
+                  className="text-[14px] sm:text-[15px] text-white/92"
+                  style={{
+                    lineHeight: 1.5,
+                    letterSpacing: "-0.005em",
+                    textShadow: "0 1px 6px rgba(15,40,70,0.3)",
+                  }}
                 >
                   {feat.desc}
                 </p>
