@@ -22,7 +22,7 @@ export default function Page() {
 
   return (
     <main className="relative overflow-x-hidden bg-[#1F6BA4]">
-      {/* Full-height scrolling background, filtered to match the video's vibrance */}
+      {/* Full-height scrolling background in its original colors */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -30,10 +30,10 @@ export default function Page() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top center",
           backgroundSize: "100% auto",
-          filter: "saturate(1.3) contrast(1.05) brightness(1.05)",
           zIndex: 0,
         }}
       />
+      {/* The video stays visible permanently, but its bottom edge blends into the background */}
       <video
         src="/Due_Owl_Hero_Video.mp4"
         autoPlay
@@ -41,8 +41,12 @@ export default function Page() {
         playsInline
         onEnded={() => setIsVideoFinished(true)}
         onError={() => setIsVideoFinished(true)}
-        className={`absolute top-0 left-0 w-full h-auto pointer-events-none transition-opacity duration-1000 ease-in-out ${isVideoFinished ? 'opacity-0' : 'opacity-100'}`}
-        style={{ zIndex: 1 }}
+        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
+        style={{ 
+          zIndex: 1,
+          maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)"
+        }}
       />
 
       {/* Mobile gradient overlay that extends the natural colours
