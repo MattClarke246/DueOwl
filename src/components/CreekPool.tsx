@@ -161,7 +161,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-10 sm:mt-14 md:mt-[240px] lg:mt-[320px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
+          className="mx-auto mt-10 sm:mt-14 md:mt-20 lg:mt-28 grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;

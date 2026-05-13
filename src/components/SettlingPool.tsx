@@ -101,7 +101,7 @@ export function SettlingPool() {
         }}
       />
 
-      <div className="container relative z-10 pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-24">
+      <div className="container relative z-10 py-6 md:py-8 lg:pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

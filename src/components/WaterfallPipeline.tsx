@@ -125,7 +125,7 @@ export function WaterfallPipeline() {
         }}
       />
 
-      <div className="container relative z-10 py-10 sm:py-12 md:py-10">
+      <div className="container relative z-10 py-6 md:py-6">
         {/* Desktop: pushed right · Mobile: full width centered */}
         <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div
