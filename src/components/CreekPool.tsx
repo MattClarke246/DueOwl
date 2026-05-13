@@ -42,7 +42,7 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center relative z-20 -mt-20 sm:-mt-28 md:-mt-[280px] lg:-mt-[360px]"
+          className="mx-auto max-w-4xl text-center relative z-20 -mt-12 sm:-mt-16 md:-mt-[160px] lg:-mt-[220px]"
         >
 
 
@@ -51,8 +51,7 @@ export function CreekPool() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="font-serif text-balance text-3xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl lg:text-[5.5rem] sm:leading-[1.05]"
             style={{
-              textShadow:
-                "0 4px 32px rgba(15,40,70,0.6), 0 2px 8px rgba(15,40,70,0.5)",
+              textShadow: "0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.8)",
             }}
           >
             <span
@@ -79,9 +78,9 @@ export function CreekPool() {
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mx-auto mt-4 sm:mt-7 max-w-xl text-balance text-sm leading-relaxed text-white sm:text-base md:text-lg"
+            className="mx-auto mt-4 sm:mt-7 max-w-xl text-balance text-sm leading-relaxed text-white sm:text-base md:text-lg font-medium"
             style={{
-              textShadow: "0 1px 12px rgba(15,40,70,0.55)",
+              textShadow: "0 2px 12px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.9)",
             }}
           >
             Due Owl follows up on late invoices for you — politely, on schedule,
@@ -110,8 +109,8 @@ export function CreekPool() {
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-white/85"
-            style={{ textShadow: "0 1px 8px rgba(15,40,70,0.55)" }}
+            className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-white/95 font-medium"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
           >
             Free forever for up to 5 invoices a month · No card required
           </motion.p>
@@ -122,7 +121,7 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-24 sm:mt-32 md:mt-[300px] lg:mt-[380px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
+          className="mx-auto mt-16 sm:mt-24 md:mt-[180px] lg:mt-[240px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
@@ -146,14 +145,12 @@ export function CreekPool() {
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <h3
-                  className="font-serif text-lg sm:text-xl tracking-tight text-white mb-1.5 sm:mb-2"
-                  style={{ textShadow: "0 1px 8px rgba(15,40,70,0.45)" }}
+                  className="font-serif text-lg sm:text-xl tracking-tight text-white mb-1.5 sm:mb-2 drop-shadow-sm"
                 >
                   {feat.title}
                 </h3>
                 <p
-                  className="text-[13px] sm:text-sm leading-relaxed text-white/90"
-                  style={{ textShadow: "0 1px 6px rgba(15,40,70,0.45)" }}
+                  className="text-[13px] sm:text-sm leading-relaxed text-white/95 drop-shadow-sm font-medium"
                 >
                   {feat.desc}
                 </p>
