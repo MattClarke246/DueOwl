@@ -42,16 +42,9 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center"
+          className="mx-auto max-w-4xl text-center relative z-20 -mt-16 sm:-mt-24 md:-mt-[220px] lg:-mt-[280px]"
         >
-          <motion.div
-            variants={FADE_UP}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mx-auto mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-white/45 bg-white/20 px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-medium text-white backdrop-blur-md"
-          >
-            <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5" style={{ color: "#F5E6B8" }} />
-            The quiet way to collect what you&apos;re owed
-          </motion.div>
+
 
           <motion.h1
             variants={FADE_UP}
@@ -129,7 +122,7 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-6 sm:mt-10 grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3"
+          className="mx-auto mt-24 sm:mt-32 md:mt-[240px] lg:mt-[300px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
