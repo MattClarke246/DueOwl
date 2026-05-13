@@ -171,35 +171,51 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
                 key={feat.title}
                 variants={FADE_UP}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="group relative rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 transition-all duration-500 hover:-translate-y-1"
+                className="group relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 transition-all duration-500 hover:-translate-y-1"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.18) 100%)",
-                  backdropFilter: "blur(20px) saturate(150%)",
-                  WebkitBackdropFilter: "blur(20px) saturate(150%)",
-                  border: "1px solid rgba(255,255,255,0.42)",
+                    "linear-gradient(165deg, #5FA12D 0%, #4F9928 45%, #3D7A25 100%)",
+                  border: "1px solid rgba(255,233,161,0.38)",
                   boxShadow:
-                    "0 1px 0 rgba(255,255,255,0.45) inset, 0 22px 55px -20px rgba(15,40,70,0.45)",
+                    "0 1px 0 rgba(255,233,161,0.35) inset, 0 22px 50px -18px rgba(20,60,15,0.55), 0 8px 20px -6px rgba(15,40,70,0.25)",
                 }}
               >
-                <div className="mb-3 sm:mb-4 grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-xl sm:rounded-2xl bg-white/30 ring-1 ring-white/40 transition-all duration-300 group-hover:bg-white/45 group-hover:ring-white/60">
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                {/* warm highlight glow in the top-right corner */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-8 -right-8 h-32 w-32 rounded-full opacity-50 transition-opacity duration-500 group-hover:opacity-70"
+                  style={{
+                    background:
+                      "radial-gradient(circle, rgba(255,233,161,0.55) 0%, transparent 65%)",
+                    filter: "blur(2px)",
+                  }}
+                />
+                <div
+                  className="relative mb-4 sm:mb-5 grid h-11 w-11 sm:h-12 sm:w-12 place-items-center rounded-xl sm:rounded-2xl transition-all duration-300 group-hover:scale-105"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(255,253,236,0.95) 0%, rgba(245,230,184,0.85) 100%)",
+                    boxShadow:
+                      "0 1px 0 rgba(255,255,255,0.7) inset, 0 6px 14px -4px rgba(20,60,15,0.35)",
+                  }}
+                >
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" style={{ color: "#4F9928" }} />
                 </div>
                 <h3
-                  className="font-serif text-xl sm:text-2xl text-white mb-2"
+                  className="relative font-serif text-xl sm:text-2xl mb-2"
                   style={{
+                    color: "#FFE9A1",
                     letterSpacing: "-0.018em",
-                    textShadow: "0 1px 8px rgba(15,40,70,0.35)",
                   }}
                 >
                   {feat.title}
                 </h3>
                 <p
-                  className="text-[14px] sm:text-[15px] text-white/92"
+                  className="relative text-[14px] sm:text-[15px]"
                   style={{
+                    color: "rgba(255,253,236,0.92)",
                     lineHeight: 1.5,
                     letterSpacing: "-0.005em",
-                    textShadow: "0 1px 6px rgba(15,40,70,0.3)",
                   }}
                 >
                   {feat.desc}

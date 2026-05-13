@@ -74,24 +74,23 @@ export function Hero() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/Due_Owl_Mark.png"
-            alt="Due Owl — owl on a branch"
+            alt="Due Owl"
             className="w-[44vw] max-w-[220px] h-auto"
             style={{
               filter: "drop-shadow(0 8px 22px rgba(15,40,70,0.35))",
             }}
           />
-          <span
-            className="mt-2 font-serif leading-none text-white"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/Due_Owl_Wordmark.png"
+            alt="dueowl"
+            className="mt-3 w-[58vw] max-w-[280px] h-auto"
             style={{
-              fontSize: "clamp(2.75rem, 13vw, 4.5rem)",
-              letterSpacing: "-0.02em",
-              textShadow: "0 2px 18px rgba(15,40,70,0.35)",
+              filter: "drop-shadow(0 4px 16px rgba(15,40,70,0.32))",
             }}
-          >
-            due<span style={{ color: "#FFE9A1" }}>owl</span>
-          </span>
+          />
           <p
-            className="mt-3 text-[11px] font-medium uppercase tracking-[0.28em] text-white/90"
+            className="mt-4 text-[11px] font-medium uppercase tracking-[0.28em] text-white/90"
             style={{ textShadow: "0 1px 8px rgba(15,40,70,0.35)" }}
           >
             Automated invoice reminders

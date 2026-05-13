@@ -22,33 +22,26 @@ export function Footer() {
       <div className="container relative z-10 py-10 sm:py-12 md:pt-16 md:pb-12">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
-            <div className="flex items-center gap-2">
-              <div
-                className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-xl"
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Due_Owl_Mark.png"
+                alt=""
+                aria-hidden="true"
+                className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
                 style={{
-                  background:
-                    "linear-gradient(180deg, #FFFCEC 0%, #F5E6B8 100%)",
-                  boxShadow:
-                    "0 6px 16px -6px rgba(15,40,70,0.5), 0 1px 0 rgba(255,255,255,0.6) inset",
+                  filter: "drop-shadow(0 6px 16px rgba(15,40,70,0.35))",
                 }}
-              >
-                <span
-                  className="font-serif text-base sm:text-lg leading-none"
-                  style={{ color: "#4F9928" }}
-                >
-                  d
-                </span>
-              </div>
-              <span
-                className="font-serif text-xl sm:text-2xl text-white"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Due_Owl_Wordmark.png"
+                alt="dueowl"
+                className="h-7 sm:h-8 w-auto"
                 style={{
-                  letterSpacing: "-0.02em",
-                  textShadow: "0 1px 8px rgba(15,40,70,0.4)",
+                  filter: "drop-shadow(0 2px 10px rgba(15,40,70,0.3))",
                 }}
-              >
-                due
-                <span style={{ color: "#FFE9A1" }}>owl</span>
-              </span>
+              />
             </div>
             <p
               className="mt-3 sm:mt-4 max-w-xs text-[14px] sm:text-[15px] text-white/90"

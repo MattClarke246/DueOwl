@@ -17,17 +17,21 @@ export function Navbar({ isVideoFinished = true }: { isVideoFinished?: boolean }
     >
       <div className="container pt-4">
         <div className="flex items-center justify-between rounded-full glass px-5 py-3">
-          <div className="flex items-center gap-2">
-            <div className="grid h-8 w-8 place-items-center rounded-xl bg-owl-500 text-cream-50 shadow-soft">
-              <span className="font-serif text-base leading-none">d</span>
-            </div>
-            <span
-              className="font-serif text-xl"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              due<span className="text-bronze-400">owl</span>
-            </span>
-          </div>
+          <a href="/" className="flex items-center gap-2.5" aria-label="Due Owl home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/Due_Owl_Mark.png"
+              alt=""
+              aria-hidden="true"
+              className="h-9 w-9 object-contain"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/Due_Owl_Wordmark.png"
+              alt="dueowl"
+              className="h-5 w-auto"
+            />
+          </a>
 
           <nav className="hidden items-center gap-8 text-[15px] font-medium text-stone-700 md:flex" style={{ letterSpacing: "-0.01em" }}>
             <a className="hover:text-stone-900 transition-colors duration-300" href="#features">
