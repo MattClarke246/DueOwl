@@ -42,7 +42,7 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center relative z-20 -mt-16 sm:-mt-24 md:-mt-[220px] lg:-mt-[280px]"
+          className="mx-auto max-w-4xl text-center relative z-20 -mt-24 sm:-mt-36 md:-mt-[340px] lg:-mt-[440px]"
         >
 
 
@@ -122,7 +122,7 @@ export function CreekPool() {
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-24 sm:mt-32 md:mt-[240px] lg:mt-[300px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
+          className="mx-auto mt-28 sm:mt-40 md:mt-[360px] lg:mt-[460px] grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;
