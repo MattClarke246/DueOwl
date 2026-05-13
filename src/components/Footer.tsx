@@ -9,17 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="relative">
-      {/* MOBILE-ONLY: deep pond floor band — top color matches the bottom
-          of SettlingPool so the storybook ends on a quiet, deep note. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(180deg, #1F6BA4 0%, #155282 55%, #0E3D63 100%)",
-        }}
-      />
-      <div className="container relative z-10 py-8 sm:py-8">
+      <div className="container relative z-10 py-6 sm:py-8">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-2">
@@ -57,7 +47,7 @@ export function Footer() {
           </div>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 sm:gap-x-12 gap-y-4 sm:gap-y-2 text-[13px] sm:text-sm w-full md:w-auto"
+            className="grid grid-cols-3 gap-x-8 sm:gap-x-12 gap-y-2 text-[13px] sm:text-sm"
             style={{
               color: "rgba(255,255,255,0.92)",
               textShadow: "0 1px 8px rgba(15,40,70,0.55)",
