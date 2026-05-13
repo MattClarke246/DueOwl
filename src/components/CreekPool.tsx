@@ -33,13 +33,13 @@ const FEATURES = [
   },
 ];
 
-export function CreekPool() {
+export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolean }) {
   return (
     <section id="features" className="relative">
       <div className="container relative z-10 py-6 sm:py-8 md:py-12">
         <motion.div
           initial="hidden"
-          whileInView="show"
+          animate={isVideoFinished ? "show" : "hidden"}
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           className="mx-auto max-w-4xl text-center relative z-20 -mt-12 sm:-mt-16 md:-mt-[160px] lg:-mt-[220px]"

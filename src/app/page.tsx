@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { CreekPool } from "@/components/CreekPool";
@@ -15,6 +18,8 @@ import { Footer } from "@/components/Footer";
    ───────────────────────────────────────────────────────────── */
 
 export default function Page() {
+  const [isVideoFinished, setIsVideoFinished] = useState(false);
+
   return (
     <main
       className="relative overflow-x-hidden"
@@ -26,6 +31,17 @@ export default function Page() {
         backgroundSize: "100% auto",
       }}
     >
+      <video
+        src="/Due_Owl_Hero_Video.mp4"
+        autoPlay
+        muted
+        playsInline
+        onEnded={() => setIsVideoFinished(true)}
+        onError={() => setIsVideoFinished(true)}
+        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
+        style={{ zIndex: 0 }}
+      />
+
       {/* Mobile gradient overlay that extends the natural colours
           below where the background image ends on narrow screens. */}
       <div
@@ -45,9 +61,9 @@ export default function Page() {
         }}
       />
 
-      <Navbar />
+      <Navbar isVideoFinished={isVideoFinished} />
       <Hero />
-      <CreekPool />
+      <CreekPool isVideoFinished={isVideoFinished} />
       <WaterfallPipeline />
       <SettlingPool />
       <Footer />
