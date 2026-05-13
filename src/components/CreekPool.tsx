@@ -57,13 +57,20 @@ export function CreekPool() {
           <motion.h1
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="font-serif text-balance text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="font-serif text-balance text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]"
             style={{
               textShadow:
-                "0 2px 26px rgba(15,40,70,0.55), 0 1px 4px rgba(15,40,70,0.45)",
+                "0 4px 32px rgba(15,40,70,0.6), 0 2px 8px rgba(15,40,70,0.5)",
             }}
           >
-            Automated invoice reminders.
+            <span
+              className="inline-block bg-clip-text text-transparent pb-2"
+              style={{
+                backgroundImage: "linear-gradient(180deg, #FFFFFF 0%, #F5E6B8 100%)",
+              }}
+            >
+              Automated invoice reminders.
+            </span>
             <br />
             <span className="italic text-white/90">Seamless flow.</span>{" "}
             <span
@@ -163,35 +170,7 @@ export function CreekPool() {
           })}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-8 sm:mt-10 flex flex-col items-center gap-3"
-        >
-          <p
-            className="text-xs uppercase tracking-[0.22em] text-white/80"
-            style={{ textShadow: "0 1px 6px rgba(15,40,70,0.5)" }}
-          >
-            Trusted by independent studios &amp; growing firms
-          </p>
-          <div
-            className="grid w-full max-w-3xl grid-cols-2 items-center gap-x-10 gap-y-4 md:grid-cols-5"
-            style={{ textShadow: "0 1px 6px rgba(15,40,70,0.5)" }}
-          >
-            {["Northwind", "Linwood", "Aperture", "Salt & Stone", "Atelier"].map(
-              (name) => (
-                <span
-                  key={name}
-                  className="text-center font-serif text-lg tracking-tight text-white/90"
-                >
-                  {name}
-                </span>
-              )
-            )}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

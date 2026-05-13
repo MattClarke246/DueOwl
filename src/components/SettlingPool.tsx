@@ -76,13 +76,13 @@ const TIERS: Tier[] = [
 export function SettlingPool() {
   return (
     <section id="pricing" className="relative">
-      <div className="container relative z-10 py-6 sm:py-8 md:py-10">
+      <div className="container relative z-10 pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-6 sm:mb-8 max-w-2xl text-center"
+          className="mx-auto mb-8 sm:mb-12 max-w-2xl text-center"
         >
           <p
             className="mb-2 text-xs uppercase tracking-[0.22em] text-white/90"
