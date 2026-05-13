@@ -33,21 +33,19 @@ export default function Page() {
           zIndex: 0,
         }}
       />
-      {/* The video stays visible permanently, but its bottom edge blends into the background */}
-      <video
-        src="/Due_Owl_Hero_Video.mp4"
-        autoPlay
-        muted
-        playsInline
-        onEnded={() => setIsVideoFinished(true)}
-        onError={() => setIsVideoFinished(true)}
-        className="absolute top-0 left-0 w-full h-auto pointer-events-none"
-        style={{ 
-          zIndex: 1,
-          maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)"
-        }}
-      />
+      {/* The video plays and is instantly removed when finished, snapping perfectly to the background with no stacking or ghosting */}
+      {!isVideoFinished && (
+        <video
+          src="/Due_Owl_Hero_Video.mp4"
+          autoPlay
+          muted
+          playsInline
+          onEnded={() => setIsVideoFinished(true)}
+          onError={() => setIsVideoFinished(true)}
+          className="absolute top-0 left-0 w-full h-auto pointer-events-none"
+          style={{ zIndex: 1 }}
+        />
+      )}
 
       {/* Mobile gradient overlay that extends the natural colours
           below where the background image ends on narrow screens. */}
