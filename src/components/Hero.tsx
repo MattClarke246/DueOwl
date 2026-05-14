@@ -24,7 +24,7 @@ export function Hero() {
 
       <section
         aria-label="Due Owl — illustrated landscape hero"
-        className="md:hidden relative w-full min-h-[55svh] sm:min-h-[65svh] flex flex-col items-center justify-start pt-[6vh] sm:pt-[8vh] px-6"
+        className="md:hidden relative w-full min-h-[55svh] sm:min-h-[65svh] flex flex-col items-center justify-start pt-24 sm:pt-28 px-6"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
