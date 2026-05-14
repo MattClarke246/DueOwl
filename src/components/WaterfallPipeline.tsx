@@ -60,30 +60,10 @@ const STEPS: Step[] = [
 export function WaterfallPipeline() {
   return (
     <section id="how" className="relative scroll-mt-24">
-      {/* MOBILE-ONLY: rocky cliff band — warm rock walls flanking an
-          animated cascading water strip down the middle. Top color
-          (#6A6E3D) matches CreekPool's bottom; bottom color (#9FD3F0)
-          matches SettlingPool's top. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute inset-0 z-0"
-        style={{
-          background:
-            "linear-gradient(180deg, #6A6E3D 0%, #8E5E3E 14%, #B6815A 32%, #8E5E3E 70%, #5B3B26 92%, #9FD3F0 100%)",
-        }}
-      />
-      {/* Warm rock columns on left and right */}
-      <div
-        aria-hidden
-        className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-[28%] z-0 opacity-70"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(91,59,38,0.55) 0%, rgba(142,94,62,0.35) 60%, transparent 100%)",
-        }}
-      />
-        {/* Removed mobile-only background bands since main image is now responsive */}
+      {/* No section-level background — the page-level
+          Due_Owl_Background_Updated.jpg provides the waterfall scene. */}
 
-      <div className="container relative z-10 py-6 md:py-6">
+      <div className="container relative z-10 py-8 sm:py-10 md:py-12">
         {/* Desktop: pushed right · Mobile: full width centered */}
         <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div

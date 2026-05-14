@@ -9,8 +9,9 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="relative">
-      {/* Removed mobile-only background bands since main image is now responsive */}
-      <div className="container relative z-10 py-6 md:pt-10 md:pb-8">
+      {/* No section-level background — the page-level
+          Due_Owl_Background_Updated.jpg flows through. */}
+      <div className="container relative z-10 py-8 sm:py-10 md:pt-14 md:pb-12">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-3">
