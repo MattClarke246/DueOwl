@@ -42,13 +42,22 @@ export default function Page() {
 
   return (
     <main className="relative overflow-x-hidden bg-[#1F6BA4]">
-      {/* Full-page illustrated landscape background.
-          Now visible on all screens. Uses auto 100% on mobile to fill height, and 100% auto on desktop. */}
+      {/* MOBILE + TABLET background — portrait illustration that
+          stretches the full page height (auto 100%, top-anchored). */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none bg-no-repeat bg-top bg-[length:auto_100%] md:bg-[length:100%_auto] z-0"
+        className="md:hidden absolute inset-0 pointer-events-none bg-no-repeat bg-top bg-[length:auto_100%] z-0"
         style={{
-          backgroundImage: "url(/Due_Owl_Background_Updated.jpg)",
+          backgroundImage: "url(/Due_Owl_Background_Mobile.png)",
+        }}
+      />
+      {/* DESKTOP background — original landscape PNG that the intro
+          video's final frame aligns with. */}
+      <div
+        aria-hidden
+        className="hidden md:block absolute inset-0 pointer-events-none bg-no-repeat bg-top bg-[length:100%_auto] z-0"
+        style={{
+          backgroundImage: "url(/Due_Owl_Background.png)",
         }}
       />
       {/* DESKTOP-ONLY: intro video. Sibling of the PNG, anchored to
