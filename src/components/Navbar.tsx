@@ -32,19 +32,12 @@ export function Navbar({ isVideoFinished = true }: { isVideoFinished?: boolean }
             scrolled ? "py-2.5 bg-white/80 backdrop-blur-xl shadow-lg border border-white/40" : "py-3 glass"
           )}
         >
-          <a href="/" className="flex items-center gap-2.5" aria-label="Due Owl home">
+          <a href="/" className="flex items-center" aria-label="Due Owl home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/Due_Owl_Mark.png"
-              alt=""
-              aria-hidden="true"
-              className="h-9 w-9 object-contain"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/Due_Owl_Wordmark.png"
-              alt="dueowl"
-              className="h-5 w-auto"
+              src="/DueOwlLogo.jpg"
+              alt="Due Owl"
+              className="h-10 w-auto rounded-lg object-contain"
             />
           </a>
 

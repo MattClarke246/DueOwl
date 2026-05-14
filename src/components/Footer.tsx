@@ -11,27 +11,17 @@ export function Footer() {
     <footer className="relative">
       {/* No section-level background — the page-level
           Due_Owl_Background_Updated.jpg flows through. */}
-      <div className="container relative z-10 py-8 sm:py-10 md:pt-14 md:pb-12">
+      <div className="container relative z-10 py-6 sm:py-8 md:pt-10 md:pb-8">
         <div className="flex flex-col items-start justify-between gap-5 sm:gap-6 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/Due_Owl_Mark.png"
-                alt=""
-                aria-hidden="true"
-                className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
+                src="/DueOwlLogo.jpg"
+                alt="Due Owl"
+                className="h-12 sm:h-14 w-auto rounded-lg object-contain"
                 style={{
                   filter: "drop-shadow(0 6px 16px rgba(15,40,70,0.35))",
-                }}
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/Due_Owl_Wordmark.png"
-                alt="dueowl"
-                className="h-7 sm:h-8 w-auto"
-                style={{
-                  filter: "drop-shadow(0 2px 10px rgba(15,40,70,0.3))",
                 }}
               />
             </div>

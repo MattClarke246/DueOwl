@@ -78,7 +78,7 @@ export function SettlingPool() {
     <section id="pricing" className="relative scroll-mt-24">
       {/* Removed mobile-only background bands since main image is now responsive */}
 
-      <div className="container relative z-10 py-8 sm:py-10 md:py-12 md:pb-20 lg:pb-28">
+      <div className="container relative z-10 pt-6 pb-14 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24 lg:pb-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export function SettlingPool() {
 
 
         {/* Mobile: reorder so "Medium" (highlighted) card appears first */}
-        <div className="mx-auto mt-10 grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3 items-stretch">
+        <div className="mx-auto mt-6 sm:mt-8 grid max-w-6xl gap-3 sm:gap-4 md:grid-cols-3 items-stretch">
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.id}
