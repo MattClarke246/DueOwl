@@ -44,39 +44,27 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           animate={isVideoFinished ? "show" : "hidden"}
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[260px] lg:-mt-[340px]"
+          className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[340px] lg:-mt-[440px]"
         >
           <motion.h1
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="font-serif text-balance text-[2.25rem] sm:text-5xl md:text-7xl lg:text-[5.5rem]"
             style={{
+              color: "#1a1a1a",
               lineHeight: 1.05,
               letterSpacing: "-0.022em",
-              textShadow: "0 1px 14px rgba(255,253,236,0.45)",
+              textShadow: "0 1px 12px rgba(255,253,236,0.35)",
             }}
           >
-            <span
-              className="inline-block bg-clip-text text-transparent pb-1 sm:pb-2"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, #1A3D14 0%, #2D5A1C 55%, #3D7A25 100%)",
-              }}
-            >
-              Automated invoice reminders.
-            </span>
+            Automated invoice reminders.
             <br />
-            <span
-              className="italic"
-              style={{ color: "#5B3B26" }}
-            >
-              Seamless flow.
-            </span>{" "}
+            <span className="italic">Seamless flow.</span>{" "}
             <span
               className="inline-block bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  "linear-gradient(90deg, #B6862A 0%, #8E5E3E 55%, #5B3B26 100%)",
+                  "linear-gradient(90deg, #C9923E 0%, #B6862A 50%, #8E5E3E 100%)",
               }}
             >
               Endless growth.
@@ -88,11 +76,10 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mx-auto mt-5 sm:mt-7 max-w-xl text-balance"
             style={{
-              color: "#1d2620",
+              color: "#2a2a2a",
               fontSize: "clamp(1rem, 1.6vw, 1.15rem)",
-              lineHeight: 1.5,
+              lineHeight: 1.55,
               letterSpacing: "-0.005em",
-              textShadow: "0 1px 8px rgba(255,253,236,0.55)",
             }}
           >
             Due Owl follows up on late invoices for you — politely, on schedule,
@@ -129,9 +116,8 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] font-medium"
             style={{
-              color: "#3a2618",
+              color: "#2a2a2a",
               letterSpacing: "-0.005em",
-              textShadow: "0 1px 6px rgba(255,253,236,0.55)",
             }}
           >
             Free forever for up to 5 invoices a month · No card required
