@@ -38,26 +38,14 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
     <section id="features" className="relative scroll-mt-24">
       {/* Removed mobile-only background bands since main image is now responsive */}
 
-      <div className="container relative z-10 py-8 sm:py-10 md:py-12">
+      <div className="container relative z-10 py-4 sm:py-6 md:py-8">
         <motion.div
           initial="hidden"
           animate={isVideoFinished ? "show" : "hidden"}
           viewport={{ once: true, margin: "-10%" }}
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[220px] lg:-mt-[300px]"
+          className="mx-auto max-w-4xl text-center relative z-20 mt-0 md:-mt-[260px] lg:-mt-[340px]"
         >
-          {/* Readability scrim — soft radial darken behind the entire
-              hero text block so white text reads at AA contrast no
-              matter where it sits over the landscape illustration. */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-[-8%] inset-y-[-12%] -z-10"
-            style={{
-              background:
-                "radial-gradient(60% 55% at 50% 45%, rgba(15,40,70,0.42) 0%, rgba(15,40,70,0.18) 55%, rgba(15,40,70,0) 80%)",
-            }}
-          />
-
           <motion.h1
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -65,24 +53,30 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
             style={{
               lineHeight: 1.05,
               letterSpacing: "-0.022em",
-              textShadow: "0 2px 18px rgba(15,40,70,0.45)",
+              textShadow: "0 1px 14px rgba(255,253,236,0.45)",
             }}
           >
             <span
               className="inline-block bg-clip-text text-transparent pb-1 sm:pb-2"
               style={{
-                backgroundImage: "linear-gradient(180deg, #FFFFFF 0%, #F5E6B8 100%)",
+                backgroundImage:
+                  "linear-gradient(180deg, #1A3D14 0%, #2D5A1C 55%, #3D7A25 100%)",
               }}
             >
               Automated invoice reminders.
             </span>
             <br />
-            <span className="italic text-white/95">Seamless flow.</span>{" "}
+            <span
+              className="italic"
+              style={{ color: "#5B3B26" }}
+            >
+              Seamless flow.
+            </span>{" "}
             <span
               className="inline-block bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  "linear-gradient(90deg, #F5E6B8 0%, #FFE9A1 50%, #E5B547 100%)",
+                  "linear-gradient(90deg, #B6862A 0%, #8E5E3E 55%, #5B3B26 100%)",
               }}
             >
               Endless growth.
@@ -92,12 +86,13 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mx-auto mt-5 sm:mt-7 max-w-xl text-balance text-white"
+            className="mx-auto mt-5 sm:mt-7 max-w-xl text-balance"
             style={{
+              color: "#1d2620",
               fontSize: "clamp(1rem, 1.6vw, 1.15rem)",
               lineHeight: 1.5,
               letterSpacing: "-0.005em",
-              textShadow: "0 1px 10px rgba(15,40,70,0.4)",
+              textShadow: "0 1px 8px rgba(255,253,236,0.55)",
             }}
           >
             Due Owl follows up on late invoices for you — politely, on schedule,
@@ -117,7 +112,13 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-white/45 bg-white/15 text-white hover:bg-white/25 backdrop-blur"
+              className="w-full sm:w-auto"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(255,253,236,0.92) 0%, rgba(245,230,184,0.88) 100%)",
+                border: "1.5px solid rgba(91,59,38,0.55)",
+                color: "#3a2618",
+              }}
             >
               Watch 90-second demo
             </Button>
@@ -126,10 +127,11 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           <motion.p
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] font-medium text-white/90"
+            className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] font-medium"
             style={{
+              color: "#3a2618",
               letterSpacing: "-0.005em",
-              textShadow: "0 1px 6px rgba(15,40,70,0.4)",
+              textShadow: "0 1px 6px rgba(255,253,236,0.55)",
             }}
           >
             Free forever for up to 5 invoices a month · No card required
@@ -141,7 +143,7 @@ export function CreekPool({ isVideoFinished = true }: { isVideoFinished?: boolea
           whileInView="show"
           viewport={{ once: true, margin: "-5%" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
-          className="mx-auto mt-10 sm:mt-14 md:mt-20 lg:mt-28 grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
+          className="mx-auto mt-8 sm:mt-10 md:mt-12 lg:mt-14 grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3 relative z-10"
         >
           {FEATURES.map((feat) => {
             const Icon = feat.icon;

@@ -63,7 +63,7 @@ export function WaterfallPipeline() {
       {/* No section-level background — the page-level
           Due_Owl_Background_Updated.jpg provides the waterfall scene. */}
 
-      <div className="container relative z-10 py-8 sm:py-10 md:py-12">
+      <div className="container relative z-10 py-4 sm:py-6 md:py-8">
         {/* Desktop: pushed right · Mobile: full width centered */}
         <div className="md:ml-auto md:max-w-[50%] md:translate-x-4 lg:translate-x-8">
           <motion.div

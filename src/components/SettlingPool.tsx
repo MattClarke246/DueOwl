@@ -78,7 +78,7 @@ export function SettlingPool() {
     <section id="pricing" className="relative scroll-mt-24">
       {/* Removed mobile-only background bands since main image is now responsive */}
 
-      <div className="container relative z-10 pt-6 pb-14 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24 lg:pb-32">
+      <div className="container relative z-10 pt-4 pb-14 sm:pt-6 sm:pb-20 md:pt-6 md:pb-24 lg:pb-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
